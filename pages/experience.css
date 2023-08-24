@@ -1,0 +1,120 @@
+.layout {
+    height: 100vh;
+    width: 100%;
+     position: relative;
+     background-color: black;
+     overflow-x: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0,2) 100%);
+}
+.backgroundImage {
+    width: 100%;
+    height: 90vh;
+  }
+
+ .exp-hero {
+    width: 100%;
+    height:100vh;
+    position: absolute;
+    pointer-events: none;
+    z-index:1;
+    justify-content: center;
+    align-items: flex-start ;
+    display:flex;
+    flex-direction: column;
+}
+
+.menu-section {
+    overflow-x: hidden;
+}
+.book-text {
+    font-family: 'Gotham-Book';
+    letter-spacing: 1px;
+    line-height: 1.6;
+    transform: scalex(1.2);
+    transform-origin: left;
+
+}
+.book-text-1 {
+    font-family: 'Gotham-Book';
+    letter-spacing: -0.5px;
+    line-height: 1.6;
+    transform: scalex(1.2);
+    transform-origin: left;
+
+}
+.golden {
+    color: #E5BC79;
+}
+
+.heroText {
+    font-family: 'Gotham-Book';
+    letter-spacing: 1px;
+    line-height: 1.4;
+    transform: scalex(1.2);
+}
+
+.menuText {
+    font-family:'Gotham-Book';
+    letter-spacing: 1px;
+    line-height: 1.4;
+    transform: scalex(1.2);
+}
+.exp-menu-1 {
+    width:40%;
+}
+.exp-menu-4 {
+    width:44%;
+}
+.exp-menu-5{
+    width:30%;
+}
+.exp5-img {
+    width:35%;
+}
+.exp6-img {
+    width:100%;
+}
+.default-text-1 {
+    font-family:'Gotham-Light';
+    transform: scaleX(1.1);
+    line-height: 1.6; 
+}
+.default-text-2 {
+    font-family:'Gotham-Light';
+
+    line-height: 1.6; 
+}
+.exp8-img {
+    width:15%;
+}
+
+.reserve-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.2px solid #E5BC79;
+}
+.urn-section-1 {
+    border-bottom: 2px solid #E5BC79;
+}
+.book-btn {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border : 1px solid #e5bc79;
+    color: #E5BC79;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+.pagination {
+    border-radius: 10px;
+}
