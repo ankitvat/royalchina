@@ -1,0 +1,43 @@
+#container{ 
+    background-color: rgba(0, 0, 0, 0.75);
+   z-index: 100;
+}
+.image-container {
+
+    min-height: 100%;
+
+}
+.logoImage {
+    opacity: 1;
+    width:60%;
+    cursor: pointer;
+}
+
+
+.navText {
+    color: #E5BC79;
+    text-transform: uppercase;
+    font-family: 'Gotham-Light';
+    z-index: 10;
+    letter-spacing: 1px;
+    line-height: 1;
+    display: inline-block;
+    transform: scalex(1.2);
+    transition: 2s ease-in-out;
+}
+
+.navText::after {
+    transition: 2s ease-in-out;
+}
+.nav-btn{
+    margin-left: 2%;
+    border: 1px solid #E5BC79;
+    color: #E5BC79;
+    text-transform: uppercase;
+    font-family: 'Gotham-Light';
+    letter-spacing: 1px;
+    line-height: 1;
+    display: inline-block;
+    transform: scalex(1.2);
+    
+}

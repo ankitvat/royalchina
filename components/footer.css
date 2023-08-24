@@ -1,0 +1,54 @@
+.container1 {
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+
+.backgroundImage1 {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height:max-content;
+}
+.text {
+    color:white;
+}
+
+.inner-container {
+   
+    height: 100%;
+    z-index:1 ;  
+    border-top: 1.5px solid #E5BC79;
+   color: #E5BC79;
+}
+
+.contact-us-header {
+    color: #E5BC79;
+    font-family: 'Gotham-Book';
+    letter-spacing: 1px;
+    transform: scalex(1.2);
+  
+}
+.upArrow {
+   width: 30%;
+
+}
+.socials {
+    width:4%;
+}
+.social-click {
+    cursor: pointer;
+}
+
+.socials1 {
+    width:2%;
+    
+}
+.location-title {
+    font-family: 'Gotham-Light';
+    letter-spacing: 1px;
+}
+.headers {
+
+    transform: scalex(1.1);
+}
