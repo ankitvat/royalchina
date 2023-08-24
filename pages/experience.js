@@ -27,7 +27,12 @@ export default function Experience() {
           </h1>
         </div>
         <div className="overlay" />
-        <Image src={expbg} alt="exp-bg" className="backgroundImage" priority />
+        <Image
+          src={expbg}
+          alt="exp-bg"
+          className="backgroundImage"
+          priority={true}
+        />
       </div>
       <section className="menu-section bg-black w-full flex flex-col px-32">
         <h1 className="text-5xl uppercase book-text golden">our menu</h1>
@@ -35,8 +40,8 @@ export default function Experience() {
           <Image
             src={expMenu1}
             alt="exp-menu"
-            priority
             className="mt-10 exp-menu-1"
+            priority={true}
           />
           <div className="flex flex-col justify-start items-start ml-64 pl-10">
             <h3 className="text-base default-text-1 golden ">

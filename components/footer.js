@@ -70,6 +70,7 @@ const Footer = () => {
         src={footerBg}
         alt="background Image"
         className="backgroundImage1"
+        priority={true}
       />
     </div>
   );

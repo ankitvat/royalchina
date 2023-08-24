@@ -11,7 +11,7 @@ export default function Catering() {
   const [email, setEmail] = React.useState("");
   return (
     <Layout>
-      <div className="layout-main overflow-hidden">
+      <div className="layout-main ">
         <div className=" mt-16 hero-section-main">
           <h1 className="text-2xl  uppercase px-40 hero-text text-center mt-60 ">
             Bring Royal China's gourmet cuisine to your
@@ -48,7 +48,7 @@ export default function Catering() {
                 </h3>
                 <div className="flex flex-col w-full mt-2 h-10 items-start justify-start px-2 py-2 inner-inbox bgc-gray">
                   <input
-                    type="number"
+                    type="tel"
                     aria-label="phone"
                     value={phone}
                     className="w-full input-box"
@@ -87,11 +87,10 @@ export default function Catering() {
           src={royalchina}
           alt="exp-bg"
           className="backgroundImage"
-          priority
+          priority={true}
         />
       </div>
-      <div className="block h-40 w-full bg-black"></div>
-      <div className="block h-40 w-full bg-black"></div>
+
       <div className="w-full rest-section-1 overflow-hidden ">
         <div className="w-11/12 my-40  flex flex-row items-end justify-between urn-section">
           <h3 className="text-xl uppercase medium-text text-white px-24 ">

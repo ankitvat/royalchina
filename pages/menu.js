@@ -2895,7 +2895,7 @@ export default function Menu() {
           src={menuback}
           alt="exp-bg"
           className="backgroundImage"
-          priority
+          priority={true}
         />
       </div>
       <div className="rest-section w-full overflow-hidden">
