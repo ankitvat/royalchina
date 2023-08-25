@@ -2,9 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import { useRouter } from "next/router";
-
+import { useContext } from "react";
+import MobileContext from "@/utils/MobileContext";
 const Header = () => {
   const route = useRouter();
+  let { isMobile } = useContext(MobileContext);
 
   return (
     <header>
@@ -17,52 +19,55 @@ const Header = () => {
             <Image src={logo} alt="logo image" className="logoImage" />
           </Link>
         </div>
+        {isMobile ? (
+          <div className="w-10 h-10 bg-red-100"></div>
+        ) : (
+          <nav className=" flex flex-row justify-evenly items-center  w-2/4 ">
+            <Link href="/menu">
+              <button
+                className="py-2 "
+                style={{
+                  borderBottom:
+                    route?.pathname === "/menu" ? "2px solid #E5BC79" : "none",
+                }}
+              >
+                <h3 className="mx-4 navText text-xs" key="menu">
+                  Menu
+                </h3>
+              </button>
+            </Link>
 
-        <nav className=" flex flex-row justify-evenly items-center  w-2/4 ">
-          <Link href="/menu">
-            <button
-              className="py-2 "
-              style={{
-                borderBottom:
-                  route?.pathname === "/menu" ? "2px solid #E5BC79" : "none",
-              }}
-            >
-              <h3 className="mx-4 navText text-xs" key="menu">
-                Menu
-              </h3>
-            </button>
-          </Link>
+            <Link href="/experience">
+              <button
+                className="py-2 "
+                style={{
+                  borderBottom:
+                    route?.pathname === "/experience"
+                      ? "2px solid #E5BC79"
+                      : "none",
+                }}
+              >
+                <h3 className="mx-4 navText text-xs">the experience</h3>
+              </button>
+            </Link>
 
-          <Link href="/experience">
-            <button
-              className="py-2 "
-              style={{
-                borderBottom:
-                  route?.pathname === "/experience"
-                    ? "2px solid #E5BC79"
-                    : "none",
-              }}
-            >
-              <h3 className="mx-4 navText text-xs">the experience</h3>
-            </button>
-          </Link>
+            <Link href="/catering">
+              <button
+                className="py-2 "
+                style={{
+                  borderBottom:
+                    route?.pathname === "/catering"
+                      ? "2px solid #E5BC79"
+                      : "none",
+                }}
+              >
+                <h3 className="mx-4 navText text-xs">catering</h3>
+              </button>
+            </Link>
 
-          <Link href="/catering">
-            <button
-              className="py-2 "
-              style={{
-                borderBottom:
-                  route?.pathname === "/catering"
-                    ? "2px solid #E5BC79"
-                    : "none",
-              }}
-            >
-              <h3 className="mx-4 navText text-xs">catering</h3>
-            </button>
-          </Link>
-
-          <h1 className="nav-btn text-xs px-2 py-2">order online</h1>
-        </nav>
+            <h1 className="nav-btn text-xs px-2 py-2">order online</h1>
+          </nav>
+        )}
       </div>
     </header>
   );
