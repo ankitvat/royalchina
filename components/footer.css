@@ -21,6 +21,9 @@
     border-top: 1.5px solid #E5BC79;
    color: #E5BC79;
 }
+.up-arrow-mobile {
+    width:25%;
+}
 
 .contact-us-header {
     color: #E5BC79;
@@ -29,6 +32,10 @@
     transform: scalex(1.2);
   
 }
+.basic-text-1 {
+    color: #E5BC79;
+    font-family: 'Gotham-Book';
+} 
 .upArrow {
    width: 30%;
 

@@ -29,6 +29,31 @@
     display:flex;
     flex-direction: column;
 }
+.scroll-down {
+  border-radius: 50px;
+  border: 1px solid #E5BC79;
+}
+
+.down-arrow{
+  width:35%;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
 
 .backgroundImage {
     width: 100%;
@@ -89,16 +114,15 @@ input[type=date]:focus::-webkit-datetime-edit {
     margin-left: '50%';
   }
   .about-us {
-    height:100vh;
-    width:100%;
-    display: flex;
+
     background-color: black;
-    flex-direction: row;
-    justify-content: space-evenly;
     align-items: flex-start;
-    padding-left: 4%;
+
   }
   .aboutUsImg {
+    height:70vh;
+  }
+  .aboutUsImgMobile {
     height:70vh;
   }
   .aboutUsInner {
@@ -173,12 +197,27 @@ input[type=date]:focus::-webkit-datetime-edit {
     margin-left: -18%;
   }
   .jhaalarContainer {
-    height:100vh;
-    width:100%;
-    display: flex;
-    background-color: black;
-    flex-direction: column;
+ 
+   
     align-items: center;
+  }
+  .lota-mobile {
+    width: 20%;
+  }
+  .food-mobile {
+    width: 100%;
+  }
+  .jhaalarM {
+    width:50%;
+  }
+  .def-text {
+    text-transform: uppercase;
+    font-family: 'Gotham-Light';
+    letter-spacing: 1px;
+    line-height: 1;
+    display: inline-block;
+    transform: scalex(1.2);
+    transform-origin: left;
   }
   .white-text1 {
     color:white;
@@ -252,10 +291,16 @@ input[type=date]:focus::-webkit-datetime-edit {
   } 
   .demo-text-1 {
     font-family: 'Gotham-Book';
-
     line-height: 1.6;
     transform-origin: left;
     transform: scalex(1.2);
+  }
+  .demo-text-2 {
+    font-family: 'Gotham-Book';
+    line-height: 1.6;
+    transform-origin: left;
+    transform: scalex(1.2);
+    letter-spacing: -2px;
   }
 
   .btn-text {
