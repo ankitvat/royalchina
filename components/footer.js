@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <div className=" flex items-center justify-center w-full  container1">
-      {1 ? (
+      {isMobile ? (
         <div className="w-full flex flex-col items-center justify-start inner-container p-10">
           <h1 className="contact-us-header text-xl uppercase mt-10">
             contact us

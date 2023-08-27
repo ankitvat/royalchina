@@ -9,6 +9,7 @@ import urn from "../assets/urn.png";
 import rightLong from "../assets/right-long.png";
 import drinkOne from "../assets/drinkOne.png";
 import drinkTwo from "../assets/drinkTwo.png";
+import MobileContext from "@/utils/MobileContext";
 
 export default function Menu() {
   const [activeOption, setActiveOption] = React.useState(0);
@@ -16,6 +17,8 @@ export default function Menu() {
   const [offset, setOffset] = useState(0);
   const underlineRef = useRef(null);
   const optionsRef = useRef([]);
+
+  const { isMobile } = React.useContext(MobileContext);
 
   const options = React.useMemo(
     () => [
@@ -2874,21 +2877,24 @@ export default function Menu() {
             a tasteful travelogue, offering authentic
             <br /> everlasting flavours.
           </h1>
-          <div className=" flex flex-row items-center justify-center w-1/2 h-20 mt-24 menuHeader">
-            <Image
-              src={mazeCircle}
-              alt="maze-circle"
-              className="mazeCircle"
-              priority={true}
-            />
-            <h3 className="text-4xl uppercase heroText mx-10">our menu</h3>
-            <Image
-              src={mazeCircle}
-              alt="maze-circle"
-              className="mazeCircle"
-              priority={true}
-            />
-          </div>
+
+          {1 ? null : (
+            <div className=" flex flex-row items-center justify-center w-1/2 h-20 mt-24 menuHeader">
+              <Image
+                src={mazeCircle}
+                alt="maze-circle"
+                className="mazeCircle"
+                priority={true}
+              />
+              <h3 className="text-4xl uppercase heroText mx-10">our menu</h3>
+              <Image
+                src={mazeCircle}
+                alt="maze-circle"
+                className="mazeCircle"
+                priority={true}
+              />
+            </div>
+          )}
         </div>
         <div className="overlay" />
         <Image
