@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import mazeCircle from "../assets/mazeCircle.png";
 import nextBao from "../assets/nextBao.png";
-import menuback from "../assets/menuback.png";
+import menuback from "../assets/menuBack.png";
 import urn from "../assets/urn.png";
 import rightLong from "../assets/right-long.png";
 import drinkOne from "../assets/drinkOne.png";
