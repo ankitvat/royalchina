@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import menuback from "../assets/menuBack.png";
+import menubb from "../assets/menubb.png";
 
 export default function Appetizers() {
   const appetizers1 = React.useMemo(
@@ -135,7 +136,7 @@ export default function Appetizers() {
         </div>
         <div className="overlay" />
         <Image
-          src={menuback}
+          src={menuback || menubb}
           alt="exp-bg"
           className="backgroundImage"
           priority={true}

@@ -4,8 +4,7 @@ import Link from "next/link";
 import Layout from "@/components/layout";
 import menuback from "../assets/menuBack.png";
 import nextBao from "../assets/nextBao.png";
-import nonVeg from "../assets/nonVeg.png";
-import Veg from "../assets/veg.png";
+import menubb from "../assets/menubb.png";
 
 export default function Dimsums() {
   const steamedNonVeg = React.useMemo(
@@ -192,7 +191,7 @@ export default function Dimsums() {
         </div>
         <div className="overlay" />
         <Image
-          src={menuback}
+          src={menuback || menubb}
           alt="exp-bg"
           className="backgroundImage"
           priority={true}

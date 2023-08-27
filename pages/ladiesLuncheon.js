@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import menuback from "../assets/menuBack.png";
+import menubb from "../assets/menubb.png";
 
 export default function LadiesLuncheon() {
   const firstCourse1 = React.useMemo(
@@ -213,7 +214,7 @@ export default function LadiesLuncheon() {
         </div>
         <div className="overlay" />
         <Image
-          src={menuback}
+          src={menuback || menubb}
           alt="exp-bg"
           className="backgroundImage"
           priority={true}
