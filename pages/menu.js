@@ -41,7 +41,7 @@ export default function Menu() {
       },
       {
         title: "rice & noodles",
-        href: "/RiceAndNoodles",
+        href: "/riceandnoodles",
       },
       {
         title: "desserts",
@@ -3020,7 +3020,7 @@ export default function Menu() {
                     className="text-base uppercase heroText"
                     style={{ color: activeOption === 7 ? "black" : "#e5bc79" }}
                   >
-                    dimsum branch
+                    dimsum brunch
                   </h3>
                 </div>
               </div>

@@ -123,6 +123,13 @@
   transform: scalex(1.2);
   transform-origin: left;
 }
+.between-text {
+  font-family: 'Gotham-Light';
+  letter-spacing: 1px;
+  line-height: 1.6;
+  transform: scalex(1.2);
+  transform-origin: left;
+}
 .ap-text {
   margin-left: 25em;
 }
