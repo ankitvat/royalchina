@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import mazeCircle from "../assets/mazeCircle.png";
 import nextBao from "../assets/nextBao.png";
-import menuback from "../assets/menuBack.png";
+import menubb from "../assets/menubb.png";
 import urn from "../assets/urn.png";
 import rightLong from "../assets/right-long.png";
 import drinkOne from "../assets/drinkOne.png";
@@ -2925,7 +2925,7 @@ export default function Menu() {
 
         <div className="overlay" />
         <Image
-          src={menuback}
+          src={menubb}
           alt="exp-bg"
           className="backgroundImage"
           priority={true}
