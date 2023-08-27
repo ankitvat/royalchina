@@ -1,14 +1,15 @@
 import Layout from "@/components/layout";
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import mazeCircle from "../assets/mazeCircle.png";
 import nextBao from "../assets/nextBao.png";
 import menuback from "../assets/menuback.png";
 import urn from "../assets/urn.png";
-
 import rightLong from "../assets/right-long.png";
 import drinkOne from "../assets/drinkOne.png";
 import drinkTwo from "../assets/drinkTwo.png";
+import twoLine from "../assets/twoLine.png";
 import MobileContext from "@/utils/MobileContext";
 
 export default function Menu() {
@@ -22,12 +23,30 @@ export default function Menu() {
 
   const options = React.useMemo(
     () => [
-      "Dim sums",
-      "soups",
-      "appetizers",
-      "main course",
-      "rice & noodles",
-      "desserts",
+      {
+        title: "Dim sums",
+        href: "/dimsums",
+      },
+      {
+        title: "soups",
+        href: "/soups",
+      },
+      {
+        title: "appetizers",
+        href: "/appetizers",
+      },
+      {
+        title: "main course",
+        href: "/maincourse",
+      },
+      {
+        title: "rice & noodles",
+        href: "/RiceAndNoodles",
+      },
+      {
+        title: "desserts",
+        href: "/desserts",
+      },
     ],
     []
   );
@@ -2872,13 +2891,20 @@ export default function Menu() {
   return (
     <Layout>
       <div className="layout overflow-hidden">
-        <div className=" mt-16 heroSection">
-          <h1 className="text-xl  uppercase px-40 heroText text-center ">
-            a tasteful travelogue, offering authentic
-            <br /> everlasting flavours.
-          </h1>
+        {1 ? (
+          <div className=" heroSection-mobile">
+            <h1 className="text-xl  uppercase px-40 heroText text-center ">
+              a tasteful travelogue, offering authentic
+              <br /> everlasting flavours.
+            </h1>
+          </div>
+        ) : (
+          <div className=" mt-16 heroSection">
+            <h1 className="text-xl  uppercase px-40 heroText text-center ">
+              a tasteful travelogue, offering authentic
+              <br /> everlasting flavours.
+            </h1>
 
-          {1 ? null : (
             <div className=" flex flex-row items-center justify-center w-1/2 h-20 mt-24 menuHeader">
               <Image
                 src={mazeCircle}
@@ -2894,8 +2920,9 @@ export default function Menu() {
                 priority={true}
               />
             </div>
-          )}
-        </div>
+          </div>
+        )}
+
         <div className="overlay" />
         <Image
           src={menuback}
@@ -2904,85 +2931,125 @@ export default function Menu() {
           priority={true}
         />
       </div>
-      <div className="rest-section w-full overflow-hidden">
-        <div className="inner-section">
-          <div className=" py-10 inner-inner-section">
-            <div className="animated-nav pb-4">
-              <ul>
-                {options.map((option, index) => (
-                  <li
-                    key={index}
-                    className={
-                      activeOption === index ? "active mx-10" : "mx-10"
-                    }
-                    onClick={() => handleOptionClick(index)}
-                    ref={(el) => (optionsRef.current[index] = el)}
-                  >
-                    <h3 className="text-base uppercase heroText">{option}</h3>
-                  </li>
-                ))}
-              </ul>
-              {activeOption === 6 || activeOption === 7 ? null : (
+      {1 ? (
+        <div className="rest-section w-full overflow-hidden px-10 -mt-40">
+          {options.map((item, index) => {
+            return (
+              <Link
+                key={index}
+                className="w-full flex justify-center items-center nav-links my-3 py-2"
+                href={item?.href}
+              >
+                <h3 className="nav-text text-sm">{item?.title}</h3>
+              </Link>
+            );
+          })}
+          <Image
+            src={twoLine}
+            alt="exp-menu"
+            className="mt-10"
+            priority={true}
+          />
+          <Link
+            className="w-full flex justify-center items-center nav-links my-3 py-2 mt-10"
+            href="/dimsumBrunch"
+          >
+            <h3 className="nav-text text-sm uppercase">dimsum brunch</h3>
+          </Link>
+          <Link
+            className="w-full flex justify-center items-center nav-links my-3 py-2"
+            href="/ladiesLuncheon"
+          >
+            <h3 className="nav-text text-sm uppercase">ladies Luncheon</h3>
+          </Link>
+          <div className="w-full h-40 bg-black"></div>
+        </div>
+      ) : (
+        <div className="rest-section w-full overflow-hidden">
+          <div className="inner-section">
+            <div className=" py-10 inner-inner-section">
+              <div className="animated-nav pb-4">
+                <ul>
+                  {options.map((option, index) => (
+                    <li
+                      key={index}
+                      className={
+                        activeOption === index ? "active mx-10" : "mx-10"
+                      }
+                      onClick={() => handleOptionClick(index)}
+                      ref={(el) => (optionsRef.current[index] = el)}
+                    >
+                      <h3 className="text-base uppercase heroText">
+                        {option?.title}
+                      </h3>
+                    </li>
+                  ))}
+                </ul>
+                {activeOption === 6 || activeOption === 7 ? null : (
+                  <div
+                    className="linez"
+                    style={getUnderlineStyle()}
+                    ref={underlineRef}
+                  ></div>
+                )}
+              </div>
+              <div className="line-bottom mt-2"></div>
+              <div className="two-btns mt-10">
                 <div
-                  className="linez"
-                  style={getUnderlineStyle()}
-                  ref={underlineRef}
-                ></div>
-              )}
-            </div>
-            <div className="line-bottom mt-2"></div>
-            <div className="two-btns mt-10">
-              <div
-                className="btn-1 py-1 px-8"
-                style={{
-                  backgroundColor: activeOption === 6 ? "#e5bc79" : "black",
-                }}
-                onClick={() => handleOptionClick(6)}
-              >
-                <h3
-                  className="text-base uppercase heroText"
-                  style={{ color: activeOption === 6 ? "black" : "#e5bc79" }}
+                  className="btn-1 py-1 px-8"
+                  style={{
+                    backgroundColor: activeOption === 6 ? "#e5bc79" : "black",
+                  }}
+                  onClick={() => handleOptionClick(6)}
                 >
-                  ladies luncheon
-                </h3>
-              </div>
-              <div
-                className="btn-2 py-1 px-8 ml-14"
-                style={{
-                  backgroundColor: activeOption === 7 ? "#e5bc79" : "black",
-                }}
-                onClick={() => handleOptionClick(7)}
-              >
-                <h3
-                  className="text-base uppercase heroText"
-                  style={{ color: activeOption === 7 ? "black" : "#e5bc79" }}
+                  <h3
+                    className="text-base uppercase heroText"
+                    style={{ color: activeOption === 6 ? "black" : "#e5bc79" }}
+                  >
+                    ladies luncheon
+                  </h3>
+                </div>
+                <div
+                  className="btn-2 py-1 px-8 ml-14"
+                  style={{
+                    backgroundColor: activeOption === 7 ? "#e5bc79" : "black",
+                  }}
+                  onClick={() => handleOptionClick(7)}
                 >
-                  dimsum branch
-                </h3>
+                  <h3
+                    className="text-base uppercase heroText"
+                    style={{ color: activeOption === 7 ? "black" : "#e5bc79" }}
+                  >
+                    dimsum branch
+                  </h3>
+                </div>
               </div>
+              {renderBasedOnActiveOption()}
+              <h3 className="text-xs text-white default-text w-full bottom-text mt-20 ml-96">
+                <span className="star">*</span>Govt. Taxes Applicable. We Levy
+                An Optional 10% Service Charge<span className="star">*</span>
+              </h3>
             </div>
-            {renderBasedOnActiveOption()}
-            <h3 className="text-xs text-white default-text w-full bottom-text mt-20 ml-96">
-              <span className="star">*</span>Govt. Taxes Applicable. We Levy An
-              Optional 10% Service Charge<span className="star">*</span>
+          </div>
+          <div className="w-11/12 my-40  flex flex-row items-end justify-between urn-section">
+            <h3 className="text-xl uppercase medium-text text-white px-24 ">
+              come experience the everlasting <br /> taste of authenticity with
+              a
+              <br /> trendy twist of flavours and have <br /> an evocative
+              dining experience <br /> with a chinese flair in the air.
             </h3>
+            <Image src={urn} alt="urn" priority={true} className="urn-image" />
+          </div>
+          <div className="w-full">
+            <div className="btn-3 w-80 mb-40 py-2 ml-40 pl-10 px-5 ">
+              <h3 className=" text-base uppercase demo-text">
+                Book a table now
+              </h3>
+              <Image src={rightLong} alt="right" priority className="ml-10" />
+            </div>
           </div>
         </div>
-        <div className="w-11/12 my-40  flex flex-row items-end justify-between urn-section">
-          <h3 className="text-xl uppercase medium-text text-white px-24 ">
-            come experience the everlasting <br /> taste of authenticity with a
-            <br /> trendy twist of flavours and have <br /> an evocative dining
-            experience <br /> with a chinese flair in the air.
-          </h3>
-          <Image src={urn} alt="urn" priority={true} className="urn-image" />
-        </div>
-        <div className="w-full">
-          <div className="btn-3 w-80 mb-40 py-2 ml-40 pl-10 px-5 ">
-            <h3 className=" text-base uppercase demo-text">Book a table now</h3>
-            <Image src={rightLong} alt="right" priority className="ml-10" />
-          </div>
-        </div>
-      </div>
+      )}
     </Layout>
   );
 }

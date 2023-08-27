@@ -174,6 +174,7 @@ const Header = () => {
                           key={index}
                           title={nav?.title}
                           link={nav?.href}
+                          onClick={invertToggle}
                         />
                       </div>
                     );
@@ -190,10 +191,10 @@ const Header = () => {
 
 export default Header;
 
-const NavComp = ({ title, link }) => {
+const NavComp = ({ title, link, onClick }) => {
   return (
     <motion.div className="w-full flex justify-center items-center nav-links my-3 py-2">
-      <Link className="navText text-sm" href={link}>
+      <Link className="navText text-sm" href={link} onClick={onClick}>
         {title}
       </Link>
     </motion.div>

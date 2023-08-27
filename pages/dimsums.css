@@ -39,7 +39,7 @@
     color: #E5BC79;
     text-transform: uppercase;
     font-family: 'Gotham-Light';
-   
+    z-index: 10;
     letter-spacing: 1px;
     line-height: 1;
     display: inline-block;
