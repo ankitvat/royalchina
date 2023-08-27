@@ -2891,7 +2891,7 @@ export default function Menu() {
   return (
     <Layout>
       <div className="layout overflow-hidden">
-        {1 ? (
+        {isMobile ? (
           <div className=" heroSection-mobile">
             <h1 className="text-xl  uppercase px-40 heroText text-center ">
               a tasteful travelogue, offering authentic
@@ -2931,7 +2931,7 @@ export default function Menu() {
           priority={true}
         />
       </div>
-      {1 ? (
+      {isMobile ? (
         <div className="rest-section w-full overflow-hidden px-10 -mt-40">
           {options.map((item, index) => {
             return (
