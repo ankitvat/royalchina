@@ -2932,7 +2932,7 @@ export default function Menu() {
         />
       </div>
       {isMobile ? (
-        <div className="rest-section w-full overflow-hidden px-10 -mt-40">
+        <div className="rest-section w-full overflow-hidden px-14 -mt-40">
           {options.map((item, index) => {
             return (
               <Link
