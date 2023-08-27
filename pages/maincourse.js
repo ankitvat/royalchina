@@ -2,7 +2,7 @@ import Layout from "@/components/layout";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import menuback from "../assets/menuBack.png";
+
 import drinkOne from "../assets/drinkOne.png";
 import drinkTwo from "../assets/drinkTwo.png";
 import menubb from "../assets/menubb.png";
@@ -322,7 +322,7 @@ export default function MainCourse() {
         </div>
         <div className="overlay" />
         <Image
-          src={menuback || menubb}
+          src={menubb}
           alt="exp-bg"
           className="backgroundImage"
           priority={true}

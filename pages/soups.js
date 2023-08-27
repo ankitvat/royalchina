@@ -2,7 +2,8 @@ import Layout from "@/components/layout";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import menuback from "../assets/menuBack.png";
+
+import menubb from "../assets/menubb.png";
 
 export default function Soups() {
   const nonVegSoup = React.useMemo(
@@ -68,7 +69,7 @@ export default function Soups() {
           </div>
           <div className="overlay" />
           <Image
-            src={menuback}
+            src={menubb}
             alt="exp-bg"
             className="backgroundImage"
             priority={true}
