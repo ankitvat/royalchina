@@ -193,10 +193,12 @@ export default Header;
 
 const NavComp = ({ title, link, onClick }) => {
   return (
-    <motion.div className="w-full flex justify-center items-center nav-links my-3 py-2">
-      <Link className="navText text-sm" href={link} onClick={onClick}>
-        {title}
-      </Link>
-    </motion.div>
+    <Link
+      className=" w-full flex justify-center items-center nav-links my-3 py-2"
+      href={link}
+      onClick={onClick}
+    >
+      <h3 className="navText text-sm">{title}</h3>
+    </Link>
   );
 };
