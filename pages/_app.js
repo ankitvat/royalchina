@@ -63,6 +63,9 @@ const App = ({ Component, pageProps }) => {
         <meta charSet="utf-8" />
         <meta name="description" content="Royal China" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="theme-color" content="#080707" />
+        <meta name="msapplication-navbutton-color" content="#080707" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#080707" />
       </Head>
       <motion.div key={router.pathname}>
         <MobileContext.Provider value={{ isMobile: isMobile }}>

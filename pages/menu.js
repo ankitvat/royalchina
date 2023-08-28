@@ -3025,7 +3025,7 @@ export default function Menu() {
                 </div>
               </div>
               {renderBasedOnActiveOption()}
-              <h3 className="text-xs text-white default-text w-full bottom-text mt-20 ml-96">
+              <h3 className="text-xs text-white default-text w-full bottom-text mt-20 text-center -ml-60">
                 <span className="star">*</span>Govt. Taxes Applicable. We Levy
                 An Optional 10% Service Charge<span className="star">*</span>
               </h3>
