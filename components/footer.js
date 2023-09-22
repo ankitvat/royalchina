@@ -81,10 +81,10 @@ const Footer = () => {
                 location
               </h1>
               <h1 className=" text-sm location-title mt-16">
-                LG03, The Chanakya Mall, Chanakyapuri, New <br />
-                Delhi, Delhi, 110021, India.
+                LG03, The Chanakya Mall, Chanakyapuri, <br />
+                New Delhi, Delhi, 110021, India.
                 <br />
-                New Delhi 01169020000
+                01169020000
               </h1>
             </section>
             <section className="flex h-full w-2/5 flex-col ml-4">

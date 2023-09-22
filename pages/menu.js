@@ -24,7 +24,7 @@ export default function Menu() {
   const options = React.useMemo(
     () => [
       {
-        title: "Dim sums",
+        title: "Dim sum",
         href: "/dimsums",
       },
       {
@@ -1263,14 +1263,14 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <div className=" w -2/3 flex flex-col items-start justify-start mt-20">
+        <div className=" w-2/3 flex flex-col items-start justify-start mt-20">
           <h3 className="text-lg uppercase heroText bao-text">Bao</h3>
-          <div className=" w-full small-map mt-10">
+          <div className=" w-1/2 small-map mt-10">
             {bao?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-row justify-start items-center  text-left"
+                  className="flex flex-row justify-between items-center  text-left"
                 >
                   <h3 className="text-sm text-white default-text my-4 left-margin">
                     {item?.title}
@@ -1296,12 +1296,12 @@ export default function Menu() {
           <h3 className=" text-lg uppercase heroText ml-2">
             baked / grilled / <br /> fried
           </h3>
-          <div className=" w-full small-map mt-10">
+          <div className="w-1/2 small-map mt-10">
             {baked?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-row justify-start items-center"
+                  className="flex flex-row justify-between items-center"
                 >
                   <h3 className="text-sm text-white default-text my-4 left-margin">
                     {item?.title}
@@ -1327,7 +1327,7 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-row justify-start items-center  text-left"
+                  className="flex flex-row justify-between items-center  text-left"
                 >
                   <h3 className="text-sm text-white default-text my-4 left-margin">
                     {item?.title}
@@ -1358,12 +1358,12 @@ export default function Menu() {
             non vegetarian - <br />
             soup
           </h3>
-          <div className="small-map mt-10">
+          <div className="w-1/2 small-map mt-10">
             {nonVegSoup?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-between items-start w-full text-left"
                 >
                   <h3
                     key={index}
@@ -1415,7 +1415,7 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-between items-start w-full text-left"
                 >
                   <div
                     key={index}
@@ -1451,7 +1451,7 @@ export default function Menu() {
           </div>
         </div>
         <div className="w-1/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className="w-full small-map mt-10">
             {appetizers2?.map((item, index) => {
               return (
                 <div
@@ -1460,7 +1460,7 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start items-center mt-6  text-left"
+                    className=" w-full flex flex-row justify-between items-center mt-6  text-left"
                   >
                     <h3 className="text-sm capitalize text-white default-text  left-margin">
                       {item?.title}
@@ -1731,11 +1731,11 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-betwee items-start w-full text-left"
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start w-4/5 items-center mt-6  text-left"
+                    className="flex flex-row justify-between w-4/5 items-center mt-6  text-left"
                   >
                     <h3 className="text-sm capitalize text-white default-text left-margin">
                       {item?.title}
@@ -1748,11 +1748,13 @@ export default function Menu() {
                           </div>
                         ) : (
                           <>
-                            <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
-                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
-                            </div>
-                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
-                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            <div className="flex flex-row items-center">
+                              <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                                <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                              </div>
+                              <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                                <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                              </div>
                             </div>
                           </>
                         )}
@@ -1876,7 +1878,7 @@ export default function Menu() {
           first course
         </h3>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className=" w-full small-map mt-10">
             {firstCourse1?.map((item, index) => {
               return (
                 <div
@@ -1885,7 +1887,7 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start  items-center mt-6 text-left"
+                    className=" w-1/2 flex flex-row justify-between items-center mt-6 text-left"
                   >
                     <h3 className="text-sm capitalize text-white default-text left-margin">
                       {item?.title}
@@ -1937,7 +1939,7 @@ export default function Menu() {
           </div>
         </div>
         <div className="w-1/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className="w-full small-map mt-10">
             {firstCourse2?.map((item, index) => {
               return (
                 <div
@@ -1946,7 +1948,7 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start items-center mt-6  text-left"
+                    className="w-full flex flex-row justify-between items-center mt-6  text-left"
                   >
                     <h3 className="text-sm capitalize text-white default-text  left-margin">
                       {item?.title}
@@ -1984,7 +1986,7 @@ export default function Menu() {
           (CHOOSE ANY 2 VEG & ANY 2 NON VEG FOR THE TABLE)
         </h3>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className="w-full small-map mt-10">
             {secondCourse1?.map((item, index) => {
               return (
                 <div
@@ -1993,7 +1995,7 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start  items-center mt-6 text-left"
+                    className="w-1/2 flex flex-row justify-between  items-center mt-6 text-left"
                   >
                     <h3 className="text-sm capitalize text-white default-text left-margin">
                       {item?.title}
@@ -2045,7 +2047,7 @@ export default function Menu() {
           </div>
         </div>
         <div className="w-1/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className="w-full small-map mt-10">
             {secondCourse2?.map((item, index) => {
               return (
                 <div
@@ -2055,7 +2057,7 @@ export default function Menu() {
                   {index === 0 ? (
                     <div
                       key={index}
-                      className="flex flex-row justify-start items-center w-4/5 mt-6  text-left"
+                      className="flex flex-row justify-between items-center w-full mt-6  text-left"
                     >
                       <h3 className="text-sm capitalize text-white default-text  left-margin">
                         {item?.title}
@@ -2071,7 +2073,7 @@ export default function Menu() {
                   ) : (
                     <div
                       key={index}
-                      className="flex flex-row justify-start items-center mt-6  text-left"
+                      className="w-full flex flex-row justify-between items-center mt-6  text-left"
                     >
                       <h3 className="text-sm capitalize text-white default-text  left-margin">
                         {item?.title}
@@ -2110,7 +2112,7 @@ export default function Menu() {
           (CHOOSE ANY 2 VEG & ANY 2 NON VEG FOR THE TABLE)
         </h3>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className="w-full small-map mt-10">
             {mainCourse3?.map((item, index) => {
               return (
                 <div
@@ -2119,7 +2121,7 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start  items-center mt-6 text-left"
+                    className="w-1/2 flex flex-row justify-between  items-center mt-6 text-left"
                   >
                     <h3 className="text-sm capitalize text-white default-text left-margin">
                       {item?.title}
@@ -2171,7 +2173,7 @@ export default function Menu() {
           </div>
         </div>
         <div className="w-1/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className="w-full small-map mt-10">
             {mainCourse4?.map((item, index) => {
               return (
                 <div
@@ -2181,15 +2183,17 @@ export default function Menu() {
                   {index === 0 ? (
                     <div
                       key={index}
-                      className="flex flex-row justify-start items-center w-4/5 mt-6  text-left"
+                      className=" flex flex-row justify-between items-center w-full mt-6  text-left"
                     >
                       <h3 className="text-sm capitalize text-white default-text  left-margin">
                         {item?.title}
                       </h3>
                       {item?.veg ? (
                         <>
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          <div className="h-max flex flex-row justify-center items-center">
+                            <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
                           </div>
                         </>
                       ) : null}
@@ -2197,15 +2201,17 @@ export default function Menu() {
                   ) : (
                     <div
                       key={index}
-                      className="flex flex-row justify-start items-center  w-4/5 mt-6  text-left"
+                      className="flex flex-row justify-between items-center  w-full mt-6  text-left"
                     >
                       <h3 className="text-sm capitalize text-white default-text  left-margin">
                         {item?.title}
                       </h3>
                       {item?.veg ? (
                         <>
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          <div className="h-max flex flex-row justify-center items-center">
+                            <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
                           </div>
                         </>
                       ) : null}
@@ -2233,16 +2239,16 @@ export default function Menu() {
           CHOOSE ANY 2 FOR THE TABLE
         </h3>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className="w-full small-map mt-10">
             {choose1?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-start items-start w-full text-left"
+                  className=" flex flex-col justify-start items-start w-full text-left"
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start  items-center mt-6 text-left"
+                    className="w-1/2 flex flex-row justify-between  items-center mt-6 text-left"
                   >
                     <h3 className="text-sm capitalize text-white default-text left-margin">
                       {item?.title}
@@ -2294,7 +2300,7 @@ export default function Menu() {
           </div>
         </div>
         <div className="w-1/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
+          <div className="w-full small-map mt-10">
             {choose2?.map((item, index) => {
               return (
                 <div
@@ -2304,7 +2310,7 @@ export default function Menu() {
                   {index === 0 ? (
                     <div
                       key={index}
-                      className="flex flex-row justify-start items-center  mt-6  text-left"
+                      className="w-full flex flex-row justify-between items-center  mt-6  text-left"
                     >
                       <h3 className="text-sm capitalize text-white default-text  left-margin">
                         {item?.title}
@@ -2320,7 +2326,7 @@ export default function Menu() {
                   ) : (
                     <div
                       key={index}
-                      className="flex flex-row justify-start items-center   mt-6  text-left"
+                      className=" flex flex-row justify-between items-center w-full mt-6  text-left"
                     >
                       <h3 className="text-sm capitalize text-white default-text  left-margin">
                         {item?.title}
@@ -2451,11 +2457,11 @@ export default function Menu() {
           </div>
         </div>
         <div className="w-full flex flex-col justify-center items-center  mt-24 px-40">
-          <div className="w-full bot-box pb-10">
-            <h3 className="text-sm text-white default-text text-center  mt-10 ml-56 pl-2 ">
+          <div className="w-full bot-box pb-10  flex flex-col items-center">
+            <h3 className="text-sm text-white default-text text-center  mt-10 ml-56 lg:-ml-10 pl-2 ">
               Terms and Conditions Apply
             </h3>
-            <h3 className="text-xs text-white default-text text-center mt-10 ml-10">
+            <h3 className="text-xs text-white default-text text-center mt-10 ml-10 lg:-ml-32">
               -Government taxes as applicable. -We levy on 10% service charge.
               Full table
               <br />
@@ -3042,9 +3048,7 @@ export default function Menu() {
           </div>
           <div className="w-full">
             <div className="btn-3 w-80 mb-40 py-2 ml-40 pl-10 px-5 ">
-              <h3 className=" text-base uppercase demo-text">
-                Book a table now
-              </h3>
+              <h3 className=" text-base uppercase demo-text">Order online</h3>
               <Image src={rightLong} alt="right" priority className="ml-10" />
             </div>
           </div>

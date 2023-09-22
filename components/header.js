@@ -130,8 +130,12 @@ const Header = () => {
                 <h3 className="mx-4 navText text-xs">catering</h3>
               </button>
             </Link>
-
-            <h1 className="nav-btn text-xs px-2 py-2">order online</h1>
+            <Link
+              href="https://royalchinadelhi.dotpe.in/store/1/delivery#618232"
+              className="nav-btn px-2 py-2"
+            >
+              <h1 className=" text-xs">order online</h1>
+            </Link>
           </nav>
         )}
         <AnimatePresence>

@@ -274,7 +274,7 @@ export default function Experience() {
                 <br />
                 <br />
               </h3>
-              <div className=" pr-8 py-1 mt-40 reserve-btn  w-64">
+              <div className=" pr-8 py-1 mt-40 reserve-btn  w-64 lg:py-2">
                 <Link href="/menu">
                   <h3 className=" text-sm uppercase book-text golden">
                     check our menu
@@ -334,12 +334,13 @@ export default function Experience() {
           </h3>
 
           <div className="w-full h-40  my-24 items-center">
-            <div className="book-btn w-80  py-2  px-5 mt-10">
-              <h3 className=" text-base uppercase book-text">
-                Book a table now
-              </h3>
+            <Link
+              href="https://royalchinadelhi.dotpe.in/store/1/delivery#618232"
+              className="book-btn w-80  py-2  px-5 mt-10"
+            >
+              <h3 className=" text-base uppercase book-text">order online</h3>
               <Image src={rightLong} alt="right" priority className="ml-10" />
-            </div>
+            </Link>
           </div>
         </section>
       )}

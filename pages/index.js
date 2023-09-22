@@ -1,5 +1,6 @@
 import Layout from "@/components/layout";
 import Image from "next/image";
+import Link from "next/link";
 import { useContext } from "react";
 import MobileContext from "@/utils/MobileContext";
 import bg from "../assets/bg.png";
@@ -18,11 +19,11 @@ export default function Home() {
   return (
     <Layout>
       <div className="layout">
-        <div className=" w-full heroSection">
+        <div className=" w-full heroSection  lg:overflow-hidden">
           <Image
             src={heroLogo}
             alt="logo image"
-            className="logoMain"
+            className="logoMain lg:mt-20"
             priority={true}
           />
           {isMobile ? (
@@ -36,28 +37,15 @@ export default function Home() {
               </div>
             </div>
           ) : (
-            <>
-              <div className="flex flex-row justify-around w-1/3 my-24">
-                <h1 className="hero-text text-xl white">reservation</h1>
-                <h1 className="hero-text text-xl">delivery</h1>
+            <div className="w-full h-52 mt-20 flex flex-row justify-center items-center">
+              <div className=" w-14 h-28 scroll-down flex justify-center items-center">
+                <Image
+                  src={downArrow}
+                  alt="downArrow"
+                  className="down-arrow bounce"
+                />
               </div>
-              <div className="flex flex-row items-center w-2/3 dateTime">
-                <div className="flex flex-row justify-between items-center h-10 px-4 left-box">
-                  <h1 className="date-text text-xs">select date </h1>
-                  {/* <ReactDatePicker selected={selectedDate} onChange={(date) => setSelectedDate(date)} /> */}
-                </div>
-                <div className="flex flex-row items-center h-10 px-4 right-box">
-                  <h1 className="date-text text-xs">time</h1>
-                  {/* <input
-          type="time"
-          id="timeInput"
-          placeholder='Time'
-          value={selectedTime}
-          onChange={handleTimeChange}
-        /> */}
-                </div>
-              </div>
-            </>
+            </div>
           )}
         </div>
 
@@ -70,14 +58,17 @@ export default function Home() {
           priority
         />
         {isMobile ? null : (
-          <div className="flex flex-row w-full skipContainer">
+          <Link
+            href="/menu"
+            className="flex flex-row w-full skipContainer mt-2"
+          >
             <h1 className="hero-text mx-auto text-base skipText">
               Skip to see menu
             </h1>
-          </div>
+          </Link>
         )}
       </div>
-      <section className="flex flex-col lg:flex-row w-full lg:pl-4 about-us justify-start items-center lg:justify-evenly">
+      <section className="flex flex-col lg:flex-row w-full lg:pl-4 lg:mt-10 about-us justify-start items-center lg:justify-evenly">
         {isMobile ? (
           <>
             <h3 className="text-4xl aboutUsHeader text-center -ml-4">

@@ -2,6 +2,7 @@
 import Layout from "@/components/layout";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import royalchina from "../assets/royalchina.png";
 import urn from "../assets/urn.png";
 import rightLong from "../assets/right-long.png";
@@ -200,12 +201,13 @@ export default function Catering() {
             <Image src={urn} alt="urn" priority={true} className="urn-image" />
           </div>
           <div className="w-10/12 flex flex-row items-center justify-start">
-            <div className="btn-3 w-80 mb-40 ml-14 py-2  pl-10 px-5 ">
-              <h3 className=" text-base uppercase demo-text">
-                Book a table now
-              </h3>
+            <Link
+              href="https://royalchinadelhi.dotpe.in/store/1/delivery#618232"
+              className="btn-3 w-80 mb-40 ml-14 py-2  pl-10 px-5 cursor-pointer "
+            >
+              <h3 className=" text-base uppercase demo-text">order online</h3>
               <Image src={rightLong} alt="right" priority className="ml-10" />
-            </div>
+            </Link>
           </div>
         </div>
       )}

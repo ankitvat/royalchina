@@ -51,7 +51,7 @@ const App = ({ Component, pageProps }) => {
     window.addEventListener("resize", updateMedia);
     return () => window.removeEventListener("resize", updateMedia);
   }, []);
-  console.log("data", isMobile);
+
   React.useEffect(() => {
     document.title = "Royal China";
   }, []);
