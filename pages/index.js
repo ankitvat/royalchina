@@ -16,10 +16,19 @@ import downArrow from "../assets/downArrow.png";
 
 export default function Home() {
   const { isMobile } = useContext(MobileContext);
+
+  function scrollToSection() {
+    const targetSection = document.getElementById("targetSection");
+
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <Layout>
       <div className="layout">
-        <div className=" w-full heroSection  lg:overflow-hidden">
+        <div className=" w-full heroSection-1  lg:overflow-hidden">
           <Image
             src={heroLogo}
             alt="logo image"
@@ -27,7 +36,10 @@ export default function Home() {
             priority={true}
           />
           {isMobile ? (
-            <div className="w-full h-52 mt-20 flex flex-row justify-center items-center">
+            <div
+              className="w-full h-52 mt-20 flex flex-row justify-center items-center cursor-pointer"
+              onClick={scrollToSection}
+            >
               <div className=" w-14 h-28 scroll-down flex justify-center items-center">
                 <Image
                   src={downArrow}
@@ -38,7 +50,10 @@ export default function Home() {
             </div>
           ) : (
             <div className="w-full h-52 mt-20 flex flex-row justify-center items-center">
-              <div className=" w-14 h-28 scroll-down flex justify-center items-center">
+              <div
+                className="w-14 h-28 scroll-down flex justify-center items-center cursor-pointer"
+                onClick={scrollToSection}
+              >
                 <Image
                   src={downArrow}
                   alt="downArrow"
@@ -68,7 +83,10 @@ export default function Home() {
           </Link>
         )}
       </div>
-      <section className="flex flex-col lg:flex-row w-full lg:pl-4 lg:mt-10 about-us justify-start items-center lg:justify-evenly">
+      <section
+        id="targetSection"
+        className="flex flex-col lg:flex-row w-full lg:pl-4 lg:mt-10 about-us justify-start items-center lg:justify-evenly"
+      >
         {isMobile ? (
           <>
             <h3 className="text-4xl aboutUsHeader text-center -ml-4">

@@ -211,7 +211,7 @@ export default function Experience() {
               </div>
             </div>
           </div>
-          <div className="w-full flex flex-row items-center mt-24 pb-20">
+          <div className="w-full flex flex-row items-center mt-10 pb-20">
             <h3 className="text-base default-text-1 golden pl-4">
               The crispy aromatic duck. Its lacquered,
               <br /> crispy skin conceals succulent, tender meat
@@ -230,7 +230,7 @@ export default function Experience() {
             </h3>
             <Image src={exp4} alt="exp-menu-2" className=" ml-72 exp-menu-1" />
           </div>
-          <div className="w-full flex flex-row items-center  px-5 mt-20">
+          <div className="w-full flex flex-row items-center  px-5 mt-10">
             <Image src={exp10} alt="exp-4" className="exp-menu-5" />
             <h3 className="text-base default-text-1 golden ml-80">
               Our lotus root in chili oil will surely ignite your taste
@@ -243,13 +243,13 @@ export default function Experience() {
               <br /> palate.
             </h3>
           </div>
-          <div className="w-full flex flex-row items-center justify-between mt-40">
+          <div className="w-full flex flex-row items-center justify-between mt-10">
             <h3 className="text-base default-text-1 golden pl-4 w-1/2">
               In addition to delectable dishes, our bar is stocked up with the
               finest liquor accompanied by warm hospitality to give you a taste
               of your favorite potion or a trendy cocktail.
             </h3>
-            <Image src={expMenu3} alt="exp-5" className="exp5-img" />
+            <Image src={expMenu3} alt="exp-5" className="exp5-img mr-20" />
           </div>
           <h3 className="text-6xl book-text-1 golden mt-24">
             Dive into a journey of culinary adventure in every bite.

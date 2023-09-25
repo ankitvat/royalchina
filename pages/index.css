@@ -18,13 +18,12 @@
     width: 240px;
     height: 100px;
 }
-.heroSection {
+.heroSection-1 {
     width: 100%;
     height:100vh;
     position: absolute !important;
-
-    z-index:1;
     justify-content: center;
+    z-index: 1;
     align-items: center ;
     display:flex;
     flex-direction: column;
