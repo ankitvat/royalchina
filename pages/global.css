@@ -9,6 +9,7 @@
 @import './contact.css';
 @import './menu.css';
 @import '../components/footer.css';
+@import './contact.css';
 
 @font-face {
   font-family: "Gotham-Light";

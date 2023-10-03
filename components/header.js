@@ -88,16 +88,16 @@ const Header = () => {
             <div className=" w-8 h-0.5 hamburger-menu mt-1"></div>
           </div>
         ) : (
-          <nav className=" flex flex-row justify-evenly items-center  w-2/4 ">
+          <nav className=" flex flex-row justify-evenly items-center  w-3/5 ">
             <Link href="/menu">
               <button
-                className="py-2 "
+                className="py-2 mx-4 "
                 style={{
                   borderBottom:
                     route?.pathname === "/menu" ? "2px solid #E5BC79" : "none",
                 }}
               >
-                <h3 className="mx-4 navText text-xs" key="menu">
+                <h3 className="mx-1 navText text-xs" key="menu">
                   Menu
                 </h3>
               </button>
@@ -105,7 +105,7 @@ const Header = () => {
 
             <Link href="/experience">
               <button
-                className="py-2 "
+                className="py-2 mx-4 "
                 style={{
                   borderBottom:
                     route?.pathname === "/experience"
@@ -113,13 +113,13 @@ const Header = () => {
                       : "none",
                 }}
               >
-                <h3 className="mx-4 navText text-xs">the experience</h3>
+                <h3 className="mx-1 navText text-xs">the experience</h3>
               </button>
             </Link>
 
             <Link href="/catering">
               <button
-                className="py-2 "
+                className="py-2 mx-4 "
                 style={{
                   borderBottom:
                     route?.pathname === "/catering"
@@ -127,7 +127,20 @@ const Header = () => {
                       : "none",
                 }}
               >
-                <h3 className="mx-4 navText text-xs">catering</h3>
+                <h3 className="mx-1 navText text-xs">catering</h3>
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button
+                className="py-2 mx-4"
+                style={{
+                  borderBottom:
+                    route?.pathname === "/contact"
+                      ? "2px solid #E5BC79"
+                      : "none",
+                }}
+              >
+                <h3 className="mx-1 navText text-xs">contact us </h3>
               </button>
             </Link>
             <Link

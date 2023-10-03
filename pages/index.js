@@ -1,9 +1,13 @@
 import Layout from "@/components/layout";
 import Image from "next/image";
+import React from "react";
 import Link from "next/link";
 import { useContext } from "react";
 import MobileContext from "@/utils/MobileContext";
 import bg from "../assets/bg.png";
+import bg2 from "../assets/bg2.png";
+import bg3 from "../assets/bg3.png";
+import bg4 from "../assets/bg4.png";
 import heroLogo from "../assets/herologo.png";
 import aboutUs from "../assets/aboutus.svg";
 import images from "../assets/images2.png";
@@ -24,6 +28,37 @@ export default function Home() {
       targetSection.scrollIntoView({ behavior: "smooth" });
     }
   }
+  React.useEffect(() => {
+    const sliderContent = document.querySelector(".slider-content");
+    const imagesGallery = document.querySelectorAll(".imagesGallery");
+    let currentImageIndex = 0;
+
+    const transitionDuration = 14000; // 14 seconds (should match animation duration)
+
+    const transition = () => {
+      currentImageIndex = (currentImageIndex + 1) % imagesGallery.length;
+      sliderContent.style.transition = "transform 0.1s";
+      sliderContent.style.transform = `translateX(-${
+        currentImageIndex * 100
+      }%)`;
+
+      setTimeout(() => {
+        sliderContent.style.transition = "transform 0s";
+        sliderContent.style.transform = "translateX(0)";
+        setTimeout(() => {
+          sliderContent.style.transition = `transform ${
+            transitionDuration / 1000
+          }s linear`;
+        }, 10);
+      }, 100);
+    };
+
+    const interval = setInterval(transition, transitionDuration);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <Layout>
@@ -62,6 +97,14 @@ export default function Home() {
               </div>
             </div>
           )}
+          {isMobile ? null : (
+            <Link
+              href="/menu"
+              className="flex flex-row w-full skipContainer mt-24 cursor-pointer"
+            >
+              <h1 className="hero-text mx-auto text-base skipText">see menu</h1>
+            </Link>
+          )}
         </div>
 
         <div className="overlay" />
@@ -72,16 +115,6 @@ export default function Home() {
           className="backgroundImage"
           priority
         />
-        {isMobile ? null : (
-          <Link
-            href="/menu"
-            className="flex flex-row w-full skipContainer mt-2"
-          >
-            <h1 className="hero-text mx-auto text-base skipText">
-              Skip to see menu
-            </h1>
-          </Link>
-        )}
       </div>
       <section
         id="targetSection"
@@ -105,9 +138,12 @@ export default function Home() {
               cocktails is sure to transport you to a state of comfort and
               bliss.
             </h2>
-            <div className="explore-btn w-40 h-10 mt-20 lg:mt-0">
+            <Link
+              href="/experience"
+              className="explore-btn w-40 h-10 mt-20 lg:mt-0 cursor-pointer"
+            >
               <h1 className="explore-text text-base">explore</h1>
-            </div>
+            </Link>
           </>
         ) : (
           <>
@@ -122,18 +158,27 @@ export default function Home() {
                 bliss.
               </h2>
 
-              <div className="explore-btn w-40 h-10">
+              <Link
+                href="/experience"
+                className="explore-btn w-40 h-10 cursor-pointer"
+              >
                 <h1 className="explore-text text-base">explore</h1>
-              </div>
+              </Link>
             </div>
           </>
         )}
       </section>
-      <Image
-        src={images}
-        alt="images"
-        className=" mt-32 lg:mt-64 imagesGallery"
-      />
+      <div className="w-full flex items-center flex-row overflow-hidden">
+        <div className="marquee-container mt-32 lg:mt-64 flex flex-row">
+          <div className="slider-content flex flex-row">
+            <Image src={images} alt="images" className="imagesGallery" />
+            <Image src={bg2} alt="images" className="ml-1 imagesGallery" />
+            <Image src={bg3} alt="images" className="ml-1 imagesGallery" />
+            <Image src={bg4} alt="images" className="ml-1 imagesGallery" />
+          </div>
+        </div>
+      </div>
+
       <section className="w-full flex flex-col items-center">
         {isMobile ? (
           <>
@@ -161,8 +206,8 @@ export default function Home() {
             <Image src={jhaalar} alt="jhaalar" className=" h-96 jhaalar" />
             <h1 className="white-text text-3xl">
               A timeless symphony of bold colors, Chinese values, and striking
-              prints reimagined forms the backbone of this high-quality
-              Cantonese food restaurant, Royal China.
+              prints reimagined forms the backbone of <br />
+              this high-quality Cantonese food restaurant, Royal China.
             </h1>
           </>
         )}
@@ -170,14 +215,14 @@ export default function Home() {
       <Image
         src={awards}
         alt="awards"
-        className=" mt-24 lg:mt-72 imagesGallery"
+        className=" mt-24 lg:mt-72 imagesGallery-1"
       />
       <div style={{ height: "14vh", backgroundColor: "black" }} />
       <section className="fine-dine-section">
         {isMobile ? (
           <>
             <div className=" w-full flex flex-col items-center">
-              <Image src={lota} alt="lota" className=" ml-2 lota-mobile" />
+              <Image src={lota} alt="lota" className=" ml-2  lota-mobile" />
               <h1 className="text-white text-xs -ml-8 mt-10 def-text text-center">
                 A fine dining chinese
                 <br /> restaurant & bar.
@@ -192,7 +237,7 @@ export default function Home() {
                 alignItems: "center",
                 justifyContent: "center",
                 width: "100%",
-                height: "15%",
+                minHeight: "15%",
                 position: "relative",
               }}
             >

@@ -1,0 +1,171 @@
+.layout-main-1 {
+    height: 110vh;
+    width: 100%;
+     position: relative;
+     background-color: black;
+     overflow-x: hidden;
+}
+
+.overlay-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%,rgba(0, 0, 0, 0.7) 50%, rgba(0,0,0,5) 100%);
+}
+
+.backgroundImage-1 {
+    width: 100%;
+    height: 90vh;
+  }
+
+  .hero-section-main {
+    width: 100%;
+    height:100vh;
+    position: absolute;
+    z-index:1;
+    justify-content: flex-start;
+    align-items: center ;
+    display:flex;
+    flex-direction: column;
+
+    
+}
+.hero-text {
+    font-family: 'Gotham-Book';
+    letter-spacing: 1px;
+    line-height: 1.6;
+    color: #E5BC79;
+    transform: scalex(1.2);
+    
+}
+.marquee-container {
+  white-space: nowrap;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-380% - 200px));
+  }
+}
+.slider-content 
+{
+  display: inline-block;
+  animation: scroll 14s linear forwards;
+}
+
+.imagesGallery {
+  min-width: 110vw;
+  height: 100%;
+} 
+.inbox-section {
+    background-color: #201F1F;
+    border-radius: 8px;
+}
+.xcarousel-container {
+    height:80vh;
+}
+
+.base-text {
+    font-family: 'Gotham-Light';
+    letter-spacing: 1px;
+    line-height: 1.6;
+  
+    transform: scalex(1.2);
+    transform-origin: left;
+}
+.golden {
+    color: #E5BC79;
+}
+.inner-inbox{
+    border:1px solid #E5BC79;
+    border-radius: 5px;
+    
+}
+.bgc-gray {
+    background-color: #343333;
+}
+.urn-mobile {
+  width:20%;
+}
+.inner-text 
+{
+   
+        font-family: 'Gotham-Book';
+        letter-spacing: 1px;
+        line-height: 1.6;
+        color: #E5BC79;
+        transform: scalex(1.2);
+        transform-origin: left;
+
+}
+.inner-box-text {
+    font-family: 'Gotham-Light';
+    line-height: 1.6;
+    transform: scalex(1.1);
+        transform-origin: left;
+}
+.placeholder-text {
+    font-family: 'Gotham-Light';
+    line-height: 1.6;
+    
+}
+.input-box {
+    cursor: pointer;
+    background: none;
+    color: #E5BC79;
+    font-family: 'Gotham-light';
+    
+}
+input:focus {
+    outline: none;
+  }
+
+  .urn-section {
+    border-bottom: 2px solid #e5bc79;
+  }
+
+  .urn-image {
+    height:28vh;
+    width:14vh;
+    margin-right: 6rem;
+    margin-top:1rem;
+  }
+  .medium-text-1 {
+    font-family: 'Gotham-Book';
+    letter-spacing: 0px;
+    color: #E5BC79;
+    line-height: 1.6;
+    text-align: left;
+    align-self: flex-start;
+    transform: scalex(1.2);
+    transform-origin: left;
+  }
+  .demo-text {
+    font-family: 'Gotham-Book';
+    letter-spacing: 1px;
+    line-height: 1.6;
+  
+    transform: scalex(1.2);
+  }
+  .btn-3 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border : 1px solid #e5bc79;
+    color: #E5BC79;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+  }
+  .rest-section-1 {
+    background-color: black;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+

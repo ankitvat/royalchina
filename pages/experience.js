@@ -204,11 +204,14 @@ export default function Experience() {
                 <br /> culinary delight with our most delicious
                 <br /> dishes.
               </h3>
-              <div className=" pl-5 pr-14 py-2 mt-20 reserve-btn -ml-4">
+              <Link
+                href="https://royalchinadelhi.dotpe.in/store/1/delivery#618232"
+                className=" pl-5 pr-11 py-2 mt-20 reserve-btn -ml-4"
+              >
                 <h3 className=" text-base uppercase book-text golden">
-                  reserve a table
+                  order now
                 </h3>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="w-full flex flex-row items-center mt-10 pb-20">
