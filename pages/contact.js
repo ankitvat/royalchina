@@ -6,6 +6,7 @@ import Link from "next/link";
 import images from "../assets/images2.png";
 import bg2 from "../assets/bg2.png";
 import contactbg from "../assets/contactbg.png";
+import rightLong from "../assets/right-long.png";
 import urn from "../assets/urn.png";
 import MobileContext from "@/utils/MobileContext";
 export default function Contact() {
@@ -99,15 +100,27 @@ export default function Contact() {
           priority={true}
         />
       </div>
-      <section className="w-full h-96 bg-red-black mt-10 items-center flex flex-col ">
-        <div className="w-11/12 my-40  flex flex-row items-end justify-between urn-section">
-          <h3 className="text-xl uppercase medium-text text-white px-24 ">
-            Make your event a gastronomic
-            <br /> affair with our top-notch catering
-            <br /> services. We'll turn your vision into
-            <br /> a delectable reality.
+      <section className="w-full  bg-red-black mt-10 items-center flex flex-col ">
+        <div className="w-11/12 my-40  flex flex-row items-end justify-between urn-section-1">
+          <h3 className="text-2xl uppercase medium-text px-24 ">
+            Our team of dedicated staff is passionate
+            <br /> about delivering an exceptional dining
+            <br /> experience to each and every one of our
+            <br /> valued guests. From the moment you step
+            <br /> into our restaurant, you'll be greeted with <br /> warm
+            hospitality and a vibrant ambiance that
+            <br /> reflects the spirit of Cantonese cuisine.
           </h3>
           <Image src={urn} alt="urn" priority={true} className="urn-image" />
+        </div>
+        <div className="w-10/12 flex flex-row items-center justify-start">
+          <Link
+            href="https://royalchinadelhi.dotpe.in/store/1/delivery#618232"
+            className="btn-3 w-80 mb-40 ml-14 py-2  pl-10 px-5 cursor-pointer "
+          >
+            <h3 className=" text-base uppercase demo-text">order online</h3>
+            <Image src={rightLong} alt="right" priority className="ml-10" />
+          </Link>
         </div>
       </section>
     </Layout>
