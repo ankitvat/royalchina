@@ -44,18 +44,18 @@
 .marquee-container {
   white-space: nowrap;
 }
-@keyframes scroll {
+@keyframes scroll1 {
   0% {
-    transform: translateX(10%);
+    transform: translateX(-1%);
   }
   100% {
-    transform: translateX(calc(-240% - 200px));
+    transform: translateX(calc(-72% - 200px));
   }
 }
 .slider-content 
 {
   display: inline-block;
-  animation: scroll 14s linear forwards;
+  animation: scroll1 14s linear forwards;
 }
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {

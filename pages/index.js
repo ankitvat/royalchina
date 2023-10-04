@@ -212,6 +212,8 @@ export default function Home() {
           </>
         )}
       </section>
+
+      <div className="w-full bg-red-50 h-40 mt-24 lg:mt-72"></div>
       <Image
         src={awards}
         alt="awards"

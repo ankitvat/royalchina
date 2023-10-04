@@ -41,7 +41,7 @@ export default function Catering() {
       </div>
 
       {isMobile ? (
-        <div className="w-full rest-section-1 overflow-hidden -mt-10 ">
+        <div className="w-full rest-section-1 overflow-hidden -mt-40 ">
           <div className="w-full flex flex-col px-4">
             <h3 className="text-base uppercase inner-text text-center -ml-20">
               drop your number
@@ -119,7 +119,7 @@ export default function Catering() {
               className="urn-mobile mt-24"
             />
           </div>
-          <div className="w-full flex flex-row items-center justify-start px-4 mb-10">
+          <div className="w-full flex flex-row items-center justify-start px-4 mb-10 -mt-20">
             <div className="btn-3 w-full py-2  ">
               <h3 className=" text-sm uppercase demo-text">Book a table now</h3>
               <Image src={rightLong} alt="right" priority className="ml-10" />
