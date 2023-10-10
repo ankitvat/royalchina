@@ -21,7 +21,7 @@ export default function Experience() {
   const { isMobile } = React.useContext(MobileContext);
   return (
     <Layout>
-      <div className="layout">
+      <div className="exp-layout">
         <div className="w-full exp-hero">
           {isMobile ? (
             <div className="w-full flex flex-col items-center  -mt-20">
@@ -54,7 +54,7 @@ export default function Experience() {
             </h1>
           )}
         </div>
-        <div className="overlay" />
+        <div className="exp-overlay" />
         <Image
           src={expbg}
           alt="exp-bg"

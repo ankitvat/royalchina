@@ -15,8 +15,8 @@ export default function Catering() {
   const { isMobile } = React.useContext(MobileContext);
   return (
     <Layout>
-      <div className="layout-main overflow-hidden ">
-        <div className=" mt-16 hero-section-main">
+      <div className="catering-layout overflow-hidden ">
+        <div className=" mt-16 catering-hero-section-main">
           {isMobile ? (
             <h1 className="text-lg  uppercase px-14 hero-text text-center mt-60 ">
               Bring Royal China's gourmet cuisine to your
@@ -31,11 +31,11 @@ export default function Catering() {
             </h1>
           )}
         </div>
-        <div className="overlay" />
+        <div className="catering-overlay" />
         <Image
           src={royalchina}
           alt="exp-bg"
-          className="backgroundImage"
+          className="catering-backgroundImage"
           priority={true}
         />
       </div>

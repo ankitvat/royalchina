@@ -2896,7 +2896,7 @@ export default function Menu() {
   };
   return (
     <Layout>
-      <div className="layout overflow-hidden">
+      <div className="layout-menu overflow-hidden">
         {isMobile ? (
           <div className=" heroSection-mobile">
             <h1 className="text-xl  uppercase px-40 heroText text-center ">
@@ -2929,11 +2929,11 @@ export default function Menu() {
           </div>
         )}
 
-        <div className="overlay" />
+        <div className="menu-overlay" />
         <Image
           src={menubb}
           alt="exp-bg"
-          className="backgroundImage"
+          className="menu-bg-img"
           priority={true}
         />
       </div>

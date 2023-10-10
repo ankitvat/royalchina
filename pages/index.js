@@ -215,10 +215,10 @@ export default function Home() {
         )}
       </section>
 
-      <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
+      {/* <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
         <div className="flex flex-row w-1/2 justify-center items-center awards-left"></div>
         <div className="flex flex-col justify-start items-start w-1/2 awards-right"></div>
-      </div>
+      </div> */}
       <Image
         src={awards}
         alt="awards"
