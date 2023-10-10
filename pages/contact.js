@@ -27,12 +27,6 @@ export default function Contact() {
                   Get in touch with us.
                 </h3>
 
-                <div className="flex flex-col items-start justify-start px-4 py-2 pr-12   inner-inbox mt-10">
-                  <h3 className="text-xs text-white inner-box-text">
-                    Hi, Need help? Use the form below or email
-                    <br /> me at hello@california_golfclub.org.
-                  </h3>
-                </div>
                 <div className="flex flex-col w-full items-start">
                   <h3 className="text-sm text-gray-300 placeholder-text mt-4 ">
                     Name
@@ -144,13 +138,8 @@ export default function Contact() {
                   <h3 className=" text-3xl medium-text-1">
                     Get in touch with us.
                   </h3>
-                  <div className="flex flex-col items-start justify-start px-4 py-2 pr-12   inner-inbox mt-10">
-                    <h3 className="text-xs text-white inner-box-text">
-                      Hi, Need help? Use the form below or email
-                      <br /> me at hello@california_golfclub.org.
-                    </h3>
-                  </div>
-                  <h3 className="text-sm text-gray-300 placeholder-text mt-4 ">
+
+                  <h3 className="text-sm text-gray-300 placeholder-text mt-10 ">
                     Name
                   </h3>
                   <div className="flex flex-col w-full mt-2 h-10 items-start justify-start px-2 py-2 inner-inbox bgc-gray">
@@ -176,6 +165,20 @@ export default function Contact() {
                       className="w-full input-box"
                       onChange={(e) => {
                         setEmail(e.target.value);
+                      }}
+                    />
+                  </div>
+                  <h3 className="text-sm text-gray-300 placeholder-text mt-4">
+                    Message
+                  </h3>
+                  <div className="flex flex-col w-full mt-2 h-40 items-start justify-start px-2 py-2 inner-inbox bgc-gray">
+                    <input
+                      type="text"
+                      aria-label="email"
+                      value={message}
+                      className="w-full input-box"
+                      onChange={(e) => {
+                        setMessage(e.target.value);
                       }}
                     />
                   </div>

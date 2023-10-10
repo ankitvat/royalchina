@@ -16,8 +16,10 @@ import jhaalar from "../assets/jhaalar.png";
 import awards from "../assets/awards.png";
 import lota from "../assets/lota.png";
 import food from "../assets/food.png";
-import downArrow from "../assets/downArrow.png";
 
+import downArrow from "../assets/downArrow.png";
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
 export default function Home() {
   const { isMobile } = useContext(MobileContext);
 
@@ -109,12 +111,11 @@ export default function Home() {
 
         <div className="overlay" />
 
-        <Image
-          src={bg}
-          alt="background Image"
-          className="backgroundImage"
-          priority
-        />
+        <div className="video-background">
+          <video autoPlay loop muted playsInline className="video-player">
+            <source src="/video.webm" type="video/webm" />
+          </video>
+        </div>
       </div>
       <section
         id="targetSection"
@@ -148,6 +149,7 @@ export default function Home() {
         ) : (
           <>
             <Image src={aboutUs} alt="about-us" className="aboutUsImg" />
+
             <div className="flex flex-col w-1/2 aboutUsInner">
               <h1 className="text-7xl aboutUsHeader">about us</h1>
               <h2 className="aboutUsText text-base mt-14">
@@ -213,7 +215,10 @@ export default function Home() {
         )}
       </section>
 
-      <div className="w-full bg-red-50 h-40 mt-24 lg:mt-72"></div>
+      <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
+        <div className="flex flex-row w-1/2 justify-center items-center awards-left"></div>
+        <div className="flex flex-col justify-start items-start w-1/2 awards-right"></div>
+      </div>
       <Image
         src={awards}
         alt="awards"

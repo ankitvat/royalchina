@@ -46,13 +46,7 @@ export default function Catering() {
             <h3 className="text-base uppercase inner-text text-center -ml-20">
               drop your number
             </h3>
-            <div className="flex flex-col items-start justify-start px-2 py-2 pr-12   inner-inbox mt-4">
-              <h3 className="text-xs text-white inner-box-text">
-                Hi, Want us be the part of your event?
-                <br /> Drop your Number or Mail ID and our team will get in
-                touch.
-              </h3>
-            </div>
+
             <h3 className="text-sm text-gray-300 placeholder-text mt-10 ">
               Name
             </h3>
@@ -130,13 +124,7 @@ export default function Catering() {
         <div className="w-full rest-section-1 overflow-hidden -mt-60 ">
           <div className="w-9/12  inbox-section flex flex-col items-start justify-start px-16 pt-10 pb-20">
             <h3 className="text-3xl uppercase inner-text">drop your number</h3>
-            <div className="flex flex-col items-start justify-start px-2 py-2 pr-12   inner-inbox mt-4">
-              <h3 className="text-xs text-white inner-box-text">
-                Hi, Want us be the part of your event?
-                <br /> Drop your Number or Mail ID and our team will get in
-                touch.
-              </h3>
-            </div>
+
             <h3 className="text-sm text-gray-300 placeholder-text mt-10 ">
               Name
             </h3>
