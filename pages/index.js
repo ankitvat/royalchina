@@ -16,7 +16,8 @@ import jhaalar from "../assets/jhaalar.png";
 import awards from "../assets/awards.png";
 import lota from "../assets/lota.png";
 import food from "../assets/food.png";
-
+import awd1 from "../assets/awd1.png";
+import awd2 from "../assets/awd2.png";
 import downArrow from "../assets/downArrow.png";
 import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
@@ -215,15 +216,20 @@ export default function Home() {
         )}
       </section>
 
-      {/* <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
-        <div className="flex flex-row w-1/2 justify-center items-center awards-left"></div>
+      <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
+        <div className="flex flex-row w-1/2 justify-center items-center awards-left">
+          <div className="w-72 h-72 bg-white z-10">
+            <Image
+              src={awd1}
+              priority={true}
+              alt="awd1"
+              className="awd-images"
+            />
+          </div>
+        </div>
         <div className="flex flex-col justify-start items-start w-1/2 awards-right"></div>
-      </div> */}
-      <Image
-        src={awards}
-        alt="awards"
-        className=" mt-24 lg:mt-72 imagesGallery-1"
-      />
+      </div>
+
       <div style={{ height: "14vh", backgroundColor: "black" }} />
       <section className="fine-dine-section">
         {isMobile ? (

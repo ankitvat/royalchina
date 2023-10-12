@@ -19,6 +19,12 @@
     width: 240px;
     height: 100px;
 }
+.awd-images {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+
+}
 .heroSection-1 {
     width: 100%;
     height:100vh;
@@ -78,7 +84,6 @@
 
 .awards-left {
   position: relative;
-  
 }
 
 .awards-left::before {
