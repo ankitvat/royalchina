@@ -2,7 +2,7 @@ import Layout from "@/components/layout";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import MobileContext from "@/utils/MobileContext";
 import bg from "../assets/bg.png";
 import bg2 from "../assets/bg2.png";
@@ -18,11 +18,115 @@ import lota from "../assets/lota.png";
 import food from "../assets/food.png";
 import awd1 from "../assets/awd1.png";
 import awd2 from "../assets/awd2.png";
+import awd3 from "../assets/awd3.png";
+import awd4 from "../assets/awd4.png";
+import awd5 from "../assets/awd5.png";
+import awd6 from "../assets/awd6.png";
+import awd7 from "../assets/awd7.png";
+import awd8 from "../assets/awd8.png";
+import awd9 from "../assets/awd9.png";
+import awd10 from "../assets/awd10.png";
+import awd11 from "../assets/awd11.png";
+
 import downArrow from "../assets/downArrow.png";
 import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
 export default function Home() {
   const { isMobile } = useContext(MobileContext);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [main, setMain] = useState(0);
+
+  const images = [
+    awd1,
+    awd2,
+    awd3,
+    awd4,
+    awd5,
+    awd6,
+    awd7,
+    awd8,
+    awd9,
+    awd10,
+    awd11,
+  ];
+
+  const texts = [
+    {
+      id: 1,
+      title: "Times Food Awards",
+      text1: "(Delhi and NCR)",
+      text2: "Finest Chinese (2016)",
+    },
+    {
+      id: 2,
+      title: "Zomato",
+      text1: "(Delhi and NCR)",
+      text2: "Zomato User's choice for Asian & Oriental (2013)",
+    },
+    {
+      id: 3,
+      title: "Vir Sanghir's Award",
+      text1: "(Delhi and NCR)",
+      text2: "Best Chinese (Stand-alone) restaurant (2013)",
+    },
+    {
+      id: 4,
+      title: "Times Food Awards 2012",
+      text1: "(Delhi and NCR)",
+      text2: "Best Chinese in Delhi",
+    },
+    {
+      id: 5,
+      title: "Mouthshut.com",
+      text1: "(Delhi and NCR)",
+      text2: "Best Chinese Cuisine in Delhi (2014-15)",
+    },
+    {
+      id: 6,
+      title: "Mouthshut.com",
+      text1: "(Delhi and NCR)",
+      text2: "Best Chinese Cuisine in Delhi (2013)",
+    },
+    {
+      id: 7,
+      title: "Delhi Gourmet Club 2012",
+      text1: "(Delhi and NCR)",
+      text2: "Best Chinese in Delhi",
+    },
+    {
+      id: 8,
+      title: "The Week",
+      text1: "(Delhi and NCR)",
+      text2: "Best Chinese in Delhi",
+    },
+    {
+      id: 9,
+      title: "HT City Top Table 2011",
+      text1: "(Delhi and NCR)",
+      text2: "City's finest Pan Asian/Chinese Restaurant",
+    },
+    {
+      id: 10,
+      title: "Times Food Awards 2014",
+      text1: "(Delhi and NCR)",
+      text2: "Best Chinese in Delhi",
+    },
+    {
+      id: 11,
+      title: "Times Food Awards 2013",
+      text1: "(Delhi and NCR)",
+      text2: "Best Chinese in Delhi",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+      setMain((prevSlide) => (prevSlide + 1) % texts.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length, texts.length]);
 
   function scrollToSection() {
     const targetSection = document.getElementById("targetSection");
@@ -216,19 +320,62 @@ export default function Home() {
         )}
       </section>
 
-      <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
-        <div className="flex flex-row w-1/2 justify-center items-center awards-left">
-          <div className="w-72 h-72 bg-white z-10">
-            <Image
-              src={awd1}
-              priority={true}
-              alt="awd1"
-              className="awd-images"
-            />
+      {isMobile ? (
+        <div className=" bg-red-200 w-full h-72 mt-10">s</div>
+      ) : (
+        <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
+          <div className="flex flex-row w-1/2 justify-center items-center awards-left">
+            <div className="w-72 h-72 bg-white z-10 slider">
+              {images.map((item, index) => (
+                <div
+                  key={index}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: index === currentSlide ? "block" : "none",
+                    transition: "opacity 1s ease-in-out",
+                    position: "absolute",
+                    opacity: index === currentSlide ? 1 : 0,
+                    top: 0,
+                    left: 0,
+                  }}
+                >
+                  <Image
+                    src={item}
+                    priority={true}
+                    alt="awd1"
+                    className="awd-images"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col justify-start items-start w-1/2 awards-right">
+            <div className="w-full z-10 slider" style={{ height: "100%" }}>
+              {texts.map((item, index) => (
+                <div
+                  key={index}
+                  style={{
+                    width: "100%",
+
+                    flexWrap: "wrap",
+                    display: index === main ? "block" : "none",
+                    transition: "opacity 1s ease-in-out",
+                    opacity: index === main ? 1 : 0,
+                  }}
+                  className=" h-96 p-20"
+                >
+                  <h3 className="title-text text-6xl h-10">{item?.title}</h3>
+                  <div className=" flex flex-col items-start justify-start mt-72 -ml-14">
+                    <h3 className="sub-text text-2xl">{item?.text1}</h3>
+                    <h3 className="sub-text text-xl mt-1">{item?.text2}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="flex flex-col justify-start items-start w-1/2 awards-right"></div>
-      </div>
+      )}
 
       <div style={{ height: "14vh", backgroundColor: "black" }} />
       <section className="fine-dine-section">

@@ -22,8 +22,15 @@
 .awd-images {
   width: 100%;
   height: 100%;
-  background-color: red;
 
+
+}
+.slider {
+  display: flex;
+  position: relative;
+  flex-direction: column; /* Change direction to column */
+  transition: transform 1s;
+  transform: translateY(0); /* Initial position */
 }
 .heroSection-1 {
     width: 100%;
@@ -292,6 +299,20 @@ input[type=date]:focus::-webkit-datetime-edit {
     letter-spacing: 1px;
     line-height: 1.4;
     transform: scalex(1.2);
+  }
+  .title-text {
+    color:white;
+    font-family: 'Gotham-Book';
+    letter-spacing: 1px;
+    line-height: 1.4;
+    transform: scalex(1.2);
+  }
+  .sub-text {
+    color:white;
+    font-family: 'Gotham-Book';
+
+    line-height: 1.4;
+
   }
   .fine-dine-section {
     height:200vh;
