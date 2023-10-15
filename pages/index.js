@@ -27,6 +27,19 @@ import awd8 from "../assets/awd8.png";
 import awd9 from "../assets/awd9.png";
 import awd10 from "../assets/awd10.png";
 import awd11 from "../assets/awd11.png";
+import m01 from "../assets/01.png";
+import m02 from "../assets/02.png";
+import m03 from "../assets/03.png";
+import m04 from "../assets/04.png";
+import m05 from "../assets/05.png";
+import m06 from "../assets/06.png";
+import m07 from "../assets/07.png";
+import m08 from "../assets/08.png";
+import m09 from "../assets/09.png";
+import m10 from "../assets/10.png";
+import m11 from "../assets/11.png";
+import m12 from "../assets/12.png";
+import m13 from "../assets/13.png";
 
 import downArrow from "../assets/downArrow.png";
 import getConfig from "next/config";
@@ -49,6 +62,8 @@ export default function Home() {
     awd10,
     awd11,
   ];
+
+  const mimages = [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10, m11];
 
   const texts = [
     {
@@ -228,7 +243,7 @@ export default function Home() {
       >
         {isMobile ? (
           <>
-            <h3 className="text-4xl aboutUsHeader text-center -ml-4">
+            <h3 className="text-4xl aboutUsHeader text-center -ml-5 mt-10">
               About
               <br /> us
             </h3>
@@ -321,7 +336,33 @@ export default function Home() {
       </section>
 
       {isMobile ? (
-        <div className=" bg-red-200 w-full h-72 mt-10">s</div>
+        <div
+          className=" bg-red-200 w-full h-36 mt-20"
+          style={{ position: "relative" }}
+        >
+          {mimages.map((item, index) => (
+            <div
+              key={index}
+              style={{
+                width: "100%",
+                height: "100%",
+                display: index === currentSlide ? "block" : "none",
+                transition: "opacity 1s ease-in-out",
+                position: "absolute",
+                opacity: index === currentSlide ? 1 : 0,
+                top: 0,
+                left: 0,
+              }}
+            >
+              <Image
+                src={item}
+                priority={true}
+                alt="awd1"
+                className="awd-images"
+              />
+            </div>
+          ))}
+        </div>
       ) : (
         <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
           <div className="flex flex-row w-1/2 justify-center items-center awards-left">

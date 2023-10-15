@@ -44,8 +44,24 @@
     background-color: #201F1F;
     border-radius: 8px;
 }
+
+.images-section {
+  min-height: 75vh;
+  border-radius: 5px;
+}
+.single-images {
+  width: 100%;
+  height:100%;
+  border-radius: 5px;
+}
 .xcarousel-container {
     height:80vh;
+}
+.images-slider-1 {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%; /* Set the width of the frame to fit the slider container */
+  overflow: hidden; 
 }
 
 .base-text {

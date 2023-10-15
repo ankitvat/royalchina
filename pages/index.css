@@ -310,7 +310,6 @@ input[type=date]:focus::-webkit-datetime-edit {
   .sub-text {
     color:white;
     font-family: 'Gotham-Book';
-
     line-height: 1.4;
 
   }

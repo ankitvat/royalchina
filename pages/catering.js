@@ -6,13 +6,41 @@ import Link from "next/link";
 import royalchina from "../assets/royalchina.png";
 import urn from "../assets/urn.png";
 import rightLong from "../assets/right-long.png";
+import c1 from "../assets/c1.png";
+import c2 from "../assets/c2.png";
+import c3 from "../assets/c3.png";
+import c4 from "../assets/c4.png";
+import c5 from "../assets/c5.png";
+import c6 from "../assets/c6.png";
+import c7 from "../assets/c7.png";
+import c8 from "../assets/c8.png";
+
+const images = [c1, c2, c3, c4, c5, c6, c7, c8];
+
 import MobileContext from "@/utils/MobileContext";
 export default function Catering() {
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [email, setEmail] = React.useState("");
 
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
   const { isMobile } = React.useContext(MobileContext);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      // Increment the index to show the next image
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000); // Change images every 2 seconds
+
+    return () => {
+      // Clear the interval when the component unmounts
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <Layout>
       <div className="catering-layout overflow-hidden ">
@@ -101,6 +129,7 @@ export default function Catering() {
               </h3>
             </div>
           </div>
+
           <div className="w-full my-40  flex flex-col items-center urn-section">
             <h3 className="text-sm uppercase medium-text text-white text-center px-20 -ml-20">
               Make your event a gastronomic affair with our top-notch catering
@@ -177,6 +206,24 @@ export default function Catering() {
               <h3 className="text-base uppercase inner-box-text golden">
                 send my message
               </h3>
+            </div>
+          </div>
+          <div className="w-9/12  mt-20 images-section">
+            <div style={{ position: "relative" }}>
+              {images.map((item, index) => (
+                <div
+                  key={index}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: index === currentImageIndex ? "block" : "none",
+                    transition: "opacity 1s ease-in-out",
+                    opacity: index === currentImageIndex ? 1 : 0,
+                  }}
+                >
+                  <Image src={item} alt="c-images" className="single-images" />
+                </div>
+              ))}
             </div>
           </div>
           <div className="w-11/12 my-40  flex flex-row items-end justify-between urn-section">
