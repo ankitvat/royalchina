@@ -208,14 +208,14 @@ export default function Catering() {
             </div>
           </div>
           <div className="w-9/12  mt-20 images-section">
-            <div style={{ position: "relative" }}>
+            <div style={{ position: "relative", overflow: "hidden" }}>
               <AnimatePresence initial={false} mode="wait">
                 <motion.div
                   key={currentImageIndex}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ x: "100%", opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
                   <Image
                     src={images[currentImageIndex]}
