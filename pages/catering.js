@@ -2,6 +2,7 @@
 import Layout from "@/components/layout";
 import React from "react";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import royalchina from "../assets/royalchina.png";
 import urn from "../assets/urn.png";
@@ -29,14 +30,12 @@ export default function Catering() {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      // Increment the index to show the next image
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); // Change images every 2 seconds
+    }, 3000);
 
     return () => {
-      // Clear the interval when the component unmounts
       clearInterval(interval);
     };
   }, []);
@@ -210,20 +209,20 @@ export default function Catering() {
           </div>
           <div className="w-9/12  mt-20 images-section">
             <div style={{ position: "relative" }}>
-              {images.map((item, index) => (
-                <div
-                  key={index}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    display: index === currentImageIndex ? "block" : "none",
-                    transition: "opacity 1s ease-in-out",
-                    opacity: index === currentImageIndex ? 1 : 0,
-                  }}
+              <AnimatePresence initial={false} mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <Image src={item} alt="c-images" className="single-images" />
-                </div>
-              ))}
+                  <Image
+                    src={images[currentImageIndex]}
+                    alt={`Image ${currentImageIndex + 1}`}
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
           <div className="w-11/12 my-40  flex flex-row items-end justify-between urn-section">

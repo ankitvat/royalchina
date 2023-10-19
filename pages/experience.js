@@ -95,19 +95,19 @@ export default function Experience() {
             silky smoothness that leaves a lasting impression on your palate.
           </h3>
           <Image src={expMenu3} alt="exp-5" priority={true} className="mt-24" />
-          <h3 className="text-sm default-text-2 golden text-center mt-14 px-10 ">
+          <h3 className="text-sm default-text-2 golden text-center mt-14 px-14 ">
             Our lotus root in chili oil will surely ignite your taste buds.
             Delicately crisp and tender, the lotus root slices are infused with
             fiery flavours, creating a perfect balance of heat and sweetness.
             With each bite, you experience a tantalising crunch followed by a
-            silky smoothness that leaves a lasting impression on your palate.
+            silky smoothness
+            <br /> that leaves a lasting impression on your palate.
           </h3>
 
           <div className="w-full flex flex-row items-center justify-center">
-            <h3 className="text-xl golden book-text text-center mt-24 -ml-10">
+            <h3 className="text-xl golden book-text text-center mt-24 -ml-10 flex-wrap">
               Dive into a journey
-              <br /> of culinary adventure
-              <br /> in every bite.
+              <br /> of culinary adventure in every bite.
             </h3>
           </div>
           <Image src={exp5} alt="exp-menu" priority={true} className=" mt-24" />

@@ -4,6 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import MobileContext from "@/utils/MobileContext";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import bg from "../assets/bg.png";
 import bg2 from "../assets/bg2.png";
 import bg3 from "../assets/bg3.png";
@@ -291,7 +293,7 @@ export default function Home() {
         )}
       </section>
       <div className="w-full flex items-center flex-row overflow-hidden">
-        <div className="marquee-container mt-32 lg:mt-64 flex flex-row">
+        <div className="marquee-container mt-32 lg:mt-44 flex flex-row">
           <div className="slider-content flex flex-row">
             <Image src={images} alt="images" className="imagesGallery" />
             <Image src={bg2} alt="images" className="ml-1 imagesGallery" />
@@ -301,7 +303,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="w-full flex flex-col items-center">
+      <section className="w-full flex flex-col items-center lg: -mt-20">
         {isMobile ? (
           <>
             <Image
@@ -364,9 +366,25 @@ export default function Home() {
           ))}
         </div>
       ) : (
-        <div className="w-full bg-red-50  mt-24 lg:mt-72 awards-section flex flex-row">
+        <div className="w-full bg-red-50  mt-24 lg:mt-52 awards-section flex flex-row">
           <div className="flex flex-row w-1/2 justify-center items-center awards-left">
-            <div className="w-72 h-72 bg-white z-10 slider">
+            <div className="w-72 h-72 z-10 slider">
+              <AnimatePresence initial={false} mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src={images[currentSlide]}
+                    alt={`Image ${currentSlide + 1}`}
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            {/* <div className="w-72 h-72 bg-white z-10 slider">
               {images.map((item, index) => (
                 <div
                   key={index}
@@ -389,30 +407,38 @@ export default function Home() {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col justify-start items-start w-1/2 awards-right">
-            <div className="w-full z-10 slider" style={{ height: "100%" }}>
-              {texts.map((item, index) => (
-                <div
-                  key={index}
-                  style={{
-                    width: "100%",
-
-                    flexWrap: "wrap",
-                    display: index === main ? "block" : "none",
-                    transition: "opacity 1s ease-in-out",
-                    opacity: index === main ? 1 : 0,
-                  }}
-                  className=" h-96 p-20"
+            <div className="w-full z-10 slider">
+              <AnimatePresence initial={false} mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <h3 className="title-text text-6xl h-10">{item?.title}</h3>
-                  <div className=" flex flex-col items-start justify-start mt-72 -ml-14">
-                    <h3 className="sub-text text-2xl">{item?.text1}</h3>
-                    <h3 className="sub-text text-xl mt-1">{item?.text2}</h3>
+                  <div
+                    style={{
+                      width: "100%",
+                    }}
+                    className=" h-96 p-20"
+                  >
+                    <h3 className="title-text text-6xl h-10">
+                      {texts[currentSlide].title}
+                    </h3>
+                    <div className=" flex flex-col items-start justify-start mt-72 -ml-14">
+                      <h3 className="sub-text text-2xl">
+                        {texts[currentSlide].text1}
+                      </h3>
+                      <h3 className="sub-text text-xl mt-1">
+                        {texts[currentSlide].title}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-              ))}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -461,7 +487,7 @@ export default function Home() {
             </h1>
           </div>
         ) : (
-          <div className="flex flex-row items-center food">
+          <div className="flex flex-row items-center food lg:-mt-2">
             <Image src={food} alt="food" className="foodImg" />
             <h1 className=" text-2xl hero-text foodText">
               Good food, great <br />
