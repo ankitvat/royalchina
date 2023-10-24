@@ -188,17 +188,19 @@ export default function Experience() {
           </div>
         </section>
       ) : (
-        <section className="menu-section bg-black w-full flex flex-col px-32">
-          <h1 className="text-5xl uppercase book-text golden">our menu</h1>
+        <section className="menu-section bg-black w-full flex flex-col px-32 items-center">
+          <h1 className="text-5xl uppercase book-text golden w-full ml-44">
+            our menu
+          </h1>
 
-          <div className=" w-full flex flex-row items-center mt-10">
+          <div className=" w-full flex flex-row items-center justify-around mt-10 -ml-28">
             <Image
               src={expMenu1}
               alt="exp-menu"
               className="mt-10 exp-menu-1"
               priority={true}
             />
-            <div className="flex flex-col justify-start items-start ml-64 pl-10">
+            <div className="flex flex-col justify-start items-start  pl-10">
               <h3 className="text-base default-text-1 golden ">
                 Prepare to be transported to a world of
                 <br /> culinary delight with our most delicious
@@ -214,7 +216,7 @@ export default function Experience() {
               </Link>
             </div>
           </div>
-          <div className="w-full flex flex-row items-center mt-10 pb-20">
+          <div className="w-full flex flex-row items-center justify-around mt-10 pb-20">
             <h3 className="text-base default-text-1 golden pl-4">
               The crispy aromatic duck. Its lacquered,
               <br /> crispy skin conceals succulent, tender meat
@@ -233,7 +235,7 @@ export default function Experience() {
             </h3>
             <Image src={exp4} alt="exp-menu-2" className=" ml-72 exp-menu-1" />
           </div>
-          <div className="w-full flex flex-row items-center  px-5 mt-10">
+          <div className="w-full flex flex-row items-center justify-around  px-5 mt-10">
             <Image src={exp10} alt="exp-4" className="exp-menu-5" />
             <h3 className="text-base default-text-1 golden ml-80">
               Our lotus root in chili oil will surely ignite your taste
@@ -241,23 +243,30 @@ export default function Experience() {
               buds. Delicately crisp and tender, the lotus root slices
               <br /> are infused with fiery flavours, creating a perfect
               <br /> balance of heat and sweetness. With each bite, you <br />{" "}
-              experience a tantalising crunch followed by a silky smoothness
-              that leaves a lasting impression on your
+              experience a tantalising crunch followed by a silky
+              <br /> smoothness that leaves a lasting impression on your
               <br /> palate.
             </h3>
           </div>
-          <div className="w-full flex flex-row items-center justify-between mt-10">
-            <h3 className="text-base default-text-1 golden pl-4 w-1/2">
-              In addition to delectable dishes, our bar is stocked up with the
-              finest liquor accompanied by warm hospitality to give you a taste
-              of your favorite potion or a trendy cocktail.
+          <div className="w-full flex flex-row items-center justify-around mt-10">
+            <h3 className="text-base default-text-1 golden ">
+              In addition to delectable dishes, our bar is stocked up
+              <br /> with the finest liquor accompanied by warm hospitality
+              <br /> to give you a taste of your favorite potion or a trendy
+              cocktail.
             </h3>
-            <Image src={expMenu3} alt="exp-5" className="exp5-img mr-20" />
+            <Image src={expMenu3} alt="exp-5" className="exp5-img " />
           </div>
-          <h3 className="text-6xl book-text-1 golden mt-24">
-            Dive into a journey of culinary adventure in every bite.
-          </h3>
-          <div className="w-full flex flex-row justify-between items-end mt-24">
+          <div className="w-full mt-24 flex-wrap ">
+            <h3 className="text-6xl book-text-1 golden ml-10">
+              Dive into a journey of culinary
+            </h3>
+            <h3 className="text-6xl book-text-1 golden ml-10">
+              adventure in every bite.
+            </h3>
+          </div>
+
+          <div className="w-full flex flex-row justify-around items-end mt-24 ">
             <Image
               src={exp5}
               alt="exp-menu"
@@ -328,7 +337,7 @@ export default function Experience() {
             </h3>
           </div>
           <Image src={jhaalar} alt="jhaalar" priority={true} />
-          <h3 className="text-2xl book-text text-white uppercase w-4/5 -mt-52">
+          <h3 className="text-2xl book-text text-white uppercase w-4/5 -mt-52 -ml-40">
             Come experience the everlasting
             <br /> taste of authenticity with a<br /> trendy twist of flavors
             and have
