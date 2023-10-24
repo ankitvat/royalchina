@@ -110,9 +110,6 @@ const Footer = () => {
               <a href="https://www.instagram.com/royalchinadelhi/">
                 <Image src={ig} className="w-4 h-4" alt="ig" />
               </a>
-
-              <Image src={tw} className="w-5 h-4" alt="tw" />
-              <Image src={yt} className="w-5 h-4" alt="yt" />
             </section>
           </div>
         </div>

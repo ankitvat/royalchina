@@ -13,7 +13,7 @@
     width: 100%;
     overflow-x: hidden;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0,2) 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0,1) 100%);
 }
 .backgroundImage {
     width: 100%;

@@ -520,11 +520,13 @@ export default function Menu() {
       },
       {
         title: "Barbeque Noodles",
+        veg: true,
         text1: "1. Pork ",
         text2: "2. Duck",
       },
       {
         title: "Ho Fun Noodles",
+        both: true,
         text1: "1. seafood",
         text2: "2. Tenderloin",
         text3: "3. Chicken",
@@ -1164,6 +1166,7 @@ export default function Menu() {
       },
       {
         title: "mixed vegetable in black bean sauce",
+        veg: true,
       },
     ],
     []
@@ -1173,9 +1176,12 @@ export default function Menu() {
     () => [
       {
         title: "egg fried rice",
+        both: true,
+        mid: true,
       },
       {
         title: "vegetable hong kong noodles",
+        veg: true,
       },
     ],
     []
@@ -1185,9 +1191,11 @@ export default function Menu() {
     () => [
       {
         title: "honey Noodles with ice cream",
+        veg: true,
       },
       {
         title: "banana toffee fritters with ice cream",
+        veg: true,
       },
     ],
     []
@@ -1235,12 +1243,23 @@ export default function Menu() {
           <div className="small-map mt-10">
             {steamedNonVeg?.map((item, index) => {
               return (
-                <h3
+                <div
                   key={index}
-                  className="text-sm text-white default-text my-6 w-4/5 left-margin"
+                  className="flex flex-row justify-start items-center  text-left"
                 >
-                  {item}
-                </h3>
+                  {!item?.veg ? (
+                    <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                      <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                    </div>
+                  ) : (
+                    <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                      <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                    </div>
+                  )}
+                  <h3 className="text-sm text-white default-text my-4 ml-5 left-margin">
+                    {item}
+                  </h3>
+                </div>
               );
             })}
           </div>
@@ -1253,12 +1272,23 @@ export default function Menu() {
           <div className="small-map mt-10">
             {steamedVeg?.map((item, index) => {
               return (
-                <h3
+                <div
                   key={index}
-                  className="text-sm text-white default-text my-6 w-4/5 left-margin"
+                  className="flex flex-row justify-start items-center  text-left"
                 >
-                  {item}
-                </h3>
+                  {item?.veg ? (
+                    <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                      <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                    </div>
+                  ) : (
+                    <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                      <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                    </div>
+                  )}
+                  <h3 className="text-sm text-white default-text my-4 ml-5 left-margin">
+                    {item}
+                  </h3>
+                </div>
               );
             })}
           </div>
@@ -1270,20 +1300,20 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-row justify-between items-center  text-left"
+                  className="flex flex-row justify-start items-center  text-left"
                 >
-                  <h3 className="text-sm text-white default-text my-4 left-margin">
-                    {item?.title}
-                  </h3>
                   {!item?.veg ? (
-                    <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                    <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                       <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                     </div>
                   ) : (
-                    <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                    <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                       <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                     </div>
                   )}
+                  <h3 className="text-sm text-white default-text my-4 ml-5 left-margin">
+                    {item?.title}
+                  </h3>
                 </div>
               );
             })}
@@ -1301,20 +1331,20 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-row justify-between items-center"
+                  className="flex flex-row justify-start items-center  text-left"
                 >
-                  <h3 className="text-sm text-white default-text my-4 left-margin">
-                    {item?.title}
-                  </h3>
                   {!item?.veg ? (
-                    <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                    <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                       <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                     </div>
                   ) : (
-                    <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                    <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                       <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                     </div>
                   )}
+                  <h3 className="text-sm text-white default-text my-4 ml-5 left-margin">
+                    {item?.title}
+                  </h3>
                 </div>
               );
             })}
@@ -1327,20 +1357,20 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-row justify-between items-center  text-left"
+                  className="flex flex-row justify-start items-center  text-left"
                 >
-                  <h3 className="text-sm text-white default-text my-4 left-margin">
-                    {item?.title}
-                  </h3>
                   {!item?.veg ? (
-                    <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                    <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                       <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                     </div>
                   ) : (
-                    <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                    <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                       <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                     </div>
                   )}
+                  <h3 className="text-sm text-white default-text my-4 ml-5 left-margin">
+                    {item?.title}
+                  </h3>
                 </div>
               );
             })}
@@ -1363,19 +1393,39 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-between items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm text-white default-text mt-6 w-full left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                    {item?.veg ? (
+                      <>
+                        <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                          <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                        <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                      </div>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1389,12 +1439,43 @@ export default function Menu() {
           <div className="small-map mt-10 w-full">
             {vegSoup?.map((item, index) => {
               return (
-                <h3
+                <div
                   key={index}
-                  className="text-sm text-white default-text my-6 w-4/5 left-margin"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  {item}
-                </h3>
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center mt-6  text-left"
+                  >
+                    {!item?.veg ? (
+                      <>
+                        <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                          <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                        <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                      </div>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin">
+                      {item}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5">
+                    {item?.text1}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
+                  </h3>
+                </div>
               );
             })}
           </div>
@@ -1415,35 +1496,58 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-between items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
                   <div
                     key={index}
                     className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text  left-margin">
-                      {item?.title}
-                    </h3>
                     {item?.both ? (
                       <>
-                        <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
-                          <div className="bg-red-600 h-2 w-2 circle-dot"></div>
-                        </div>
-                        <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
-                          <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                        </div>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
                       </>
-                    ) : null}
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin">
+                      {item?.title}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xs capitalize medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1460,28 +1564,54 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className=" w-full flex flex-row justify-between items-center mt-6  text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text  left-margin">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin">
                       {item?.title}
                     </h3>
-                    {item?.veg ? (
-                      <>
-                        <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                          <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                        </div>
-                      </>
-                    ) : null}
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1502,19 +1632,58 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex  flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm capitalize text-white default-text mt-6 w-2/4 left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin w-2/4">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-96">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1528,19 +1697,58 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex  flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm capitalize text-white default-text mt-6 w-4/5 left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin w-3/4">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1552,19 +1760,58 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex  flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm capitalize text-white default-text mt-6 w-4/5 left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin w-3/4">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1598,19 +1845,58 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex  flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm capitalize text-white default-text mt-6 w-2/4 left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin w-2/4">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-96">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1624,19 +1910,58 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex  flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm capitalize text-white default-text mt-6  left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin ">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-96">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1672,19 +1997,58 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex  flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm capitalize text-white default-text mt-6 w-2/4 left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin w-2/4">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-96">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1697,19 +2061,58 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex  flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm capitalize text-white default-text mt-6  left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin ">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs capitalize medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1731,30 +2134,25 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-betwee items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-between w-4/5 items-center mt-6  text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text left-margin">
-                      {item?.title}
-                    </h3>
                     {item?.both ? (
                       <>
                         {item?.mid ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-yellow">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
                             <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
                           <>
-                            <div className="flex flex-row items-center">
-                              <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
-                                <div className="bg-red-600 h-2 w-2 circle-dot"></div>
-                              </div>
-                              <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
-                                <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                              </div>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                             </div>
                           </>
                         )}
@@ -1762,26 +2160,32 @@ export default function Menu() {
                     ) : (
                       <>
                         {!item?.veg ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                             <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                             <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                           </div>
                         )}
                       </>
                     )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
+                      {item?.title}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1800,28 +2204,51 @@ export default function Menu() {
                     key={index}
                     className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text  left-margin">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
                       {item?.title}
                     </h3>
-                    {item?.veg ? (
-                      <>
-                        <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                          <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                        </div>
-                      </>
-                    ) : null}
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin  capitalize">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text4}
                   </h3>
                 </div>
@@ -1843,12 +2270,62 @@ export default function Menu() {
           <div className="small-map mt-10 w-full">
             {deserts1?.map((item, index) => {
               return (
-                <h3
+                <div
                   key={index}
-                  className="text-sm text-white default-text my-6 w-1/2 left-margin"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  {item?.title}
-                </h3>
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center mt-6  text-left"
+                  >
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
+                    {item?.text1}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
+                    {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
+                  </h3>
+                </div>
               );
             })}
           </div>
@@ -1857,12 +2334,62 @@ export default function Menu() {
           <div className="small-map mt-10">
             {deserts2?.map((item, index) => {
               return (
-                <h3
+                <div
                   key={index}
-                  className="text-sm text-white default-text my-6 w-4/5 left-margin"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  {item?.title}
-                </h3>
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center mt-6  text-left"
+                  >
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
+                    {item?.text1}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
+                    {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
+                  </h3>
+                </div>
               );
             })}
           </div>
@@ -1887,20 +2414,17 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className=" w-1/2 flex flex-row justify-between items-center mt-6 text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text left-margin">
-                      {item?.title}
-                    </h3>
                     {item?.both ? (
                       <>
                         {item?.mid ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-yellow">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
                             <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
                           <>
-                            <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                               <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                             </div>
                             <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
@@ -1912,26 +2436,32 @@ export default function Menu() {
                     ) : (
                       <>
                         {!item?.veg ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                             <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                             <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                           </div>
                         )}
                       </>
                     )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
+                      {item?.title}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -1948,30 +2478,53 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="w-full flex flex-row justify-between items-center mt-6  text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text  left-margin">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
                       {item?.title}
                     </h3>
-                    {item?.veg ? (
-                      <>
-                        <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                          <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                        </div>
-                      </>
-                    ) : null}
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin  capitalize">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text4}
                   </h3>
                 </div>
@@ -1995,20 +2548,17 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="w-1/2 flex flex-row justify-between  items-center mt-6 text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text left-margin">
-                      {item?.title}
-                    </h3>
                     {item?.both ? (
                       <>
                         {item?.mid ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-yellow">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
                             <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
                           <>
-                            <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                               <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                             </div>
                             <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
@@ -2020,26 +2570,32 @@ export default function Menu() {
                     ) : (
                       <>
                         {!item?.veg ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                             <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                             <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                           </div>
                         )}
                       </>
                     )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-80">
+                      {item?.title}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -2054,50 +2610,55 @@ export default function Menu() {
                   key={index}
                   className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  {index === 0 ? (
-                    <div
-                      key={index}
-                      className="flex flex-row justify-between items-center w-full mt-6  text-left"
-                    >
-                      <h3 className="text-sm capitalize text-white default-text  left-margin">
-                        {item?.title}
-                      </h3>
-                      {item?.veg ? (
-                        <>
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center mt-6  text-left"
+                  >
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                             <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                           </div>
-                        </>
-                      ) : null}
-                    </div>
-                  ) : (
-                    <div
-                      key={index}
-                      className="w-full flex flex-row justify-between items-center mt-6  text-left"
-                    >
-                      <h3 className="text-sm capitalize text-white default-text  left-margin">
-                        {item?.title}
-                      </h3>
-                      {item?.veg ? (
-                        <>
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                          </div>
-                        </>
-                      ) : null}
-                    </div>
-                  )}
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
+                  </div>
 
-                  <h3 className="text-xs medium-text left-margin  capitalize">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text4}
                   </h3>
                 </div>
@@ -2121,20 +2682,17 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="w-1/2 flex flex-row justify-between  items-center mt-6 text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text left-margin">
-                      {item?.title}
-                    </h3>
                     {item?.both ? (
                       <>
                         {item?.mid ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-yellow">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
                             <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
                           <>
-                            <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                               <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                             </div>
                             <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
@@ -2146,26 +2704,32 @@ export default function Menu() {
                     ) : (
                       <>
                         {!item?.veg ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                             <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                             <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                           </div>
                         )}
                       </>
                     )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -2180,54 +2744,55 @@ export default function Menu() {
                   key={index}
                   className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  {index === 0 ? (
-                    <div
-                      key={index}
-                      className=" flex flex-row justify-between items-center w-full mt-6  text-left"
-                    >
-                      <h3 className="text-sm capitalize text-white default-text  left-margin">
-                        {item?.title}
-                      </h3>
-                      {item?.veg ? (
-                        <>
-                          <div className="h-max flex flex-row justify-center items-center">
-                            <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center mt-6  text-left"
+                  >
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
                               <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                             </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                           </div>
-                        </>
-                      ) : null}
-                    </div>
-                  ) : (
-                    <div
-                      key={index}
-                      className="flex flex-row justify-between items-center  w-full mt-6  text-left"
-                    >
-                      <h3 className="text-sm capitalize text-white default-text  left-margin">
-                        {item?.title}
-                      </h3>
-                      {item?.veg ? (
-                        <>
-                          <div className="h-max flex flex-row justify-center items-center">
-                            <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                            </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                           </div>
-                        </>
-                      ) : null}
-                    </div>
-                  )}
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
+                  </div>
 
-                  <h3 className="text-xs medium-text left-margin  capitalize">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text4}
                   </h3>
                 </div>
@@ -2244,24 +2809,21 @@ export default function Menu() {
               return (
                 <div
                   key={index}
-                  className=" flex flex-col justify-start items-start w-full text-left"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
                   <div
                     key={index}
-                    className="w-1/2 flex flex-row justify-between  items-center mt-6 text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text left-margin">
-                      {item?.title}
-                    </h3>
                     {item?.both ? (
                       <>
                         {item?.mid ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-yellow">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
                             <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
                           <>
-                            <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                               <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                             </div>
                             <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
@@ -2273,26 +2835,32 @@ export default function Menu() {
                     ) : (
                       <>
                         {!item?.veg ? (
-                          <div className=" h-4 w-4 items-center justify-center flex ml-16 circle-border-red">
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
                             <div className="bg-red-600 h-2 w-2 circle-dot"></div>
                           </div>
                         ) : (
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                             <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                           </div>
                         )}
                       </>
                     )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -2307,50 +2875,55 @@ export default function Menu() {
                   key={index}
                   className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  {index === 0 ? (
-                    <div
-                      key={index}
-                      className="w-full flex flex-row justify-between items-center  mt-6  text-left"
-                    >
-                      <h3 className="text-sm capitalize text-white default-text  left-margin">
-                        {item?.title}
-                      </h3>
-                      {item?.veg ? (
-                        <>
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center mt-6  text-left"
+                  >
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
                             <div className="bg-green-400 h-2 w-2 circle-dot"></div>
                           </div>
-                        </>
-                      ) : null}
-                    </div>
-                  ) : (
-                    <div
-                      key={index}
-                      className=" flex flex-row justify-between items-center w-full mt-6  text-left"
-                    >
-                      <h3 className="text-sm capitalize text-white default-text  left-margin">
-                        {item?.title}
-                      </h3>
-                      {item?.veg ? (
-                        <>
-                          <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                          </div>
-                        </>
-                      ) : null}
-                    </div>
-                  )}
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
+                  </div>
 
-                  <h3 className="text-xs medium-text left-margin  capitalize">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text4}
                   </h3>
                 </div>
@@ -2568,21 +3141,54 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start  items-center mt-6 text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text left-margin">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
                       {item?.title}
                     </h3>
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -2601,28 +3207,51 @@ export default function Menu() {
                     key={index}
                     className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text  left-margin">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
                       {item?.title}
                     </h3>
-                    {item?.veg ? (
-                      <>
-                        <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                          <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                        </div>
-                      </>
-                    ) : null}
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin  capitalize">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text4}
                   </h3>
                 </div>
@@ -2646,21 +3275,54 @@ export default function Menu() {
                 >
                   <div
                     key={index}
-                    className="flex flex-row justify-start  items-center mt-6 text-left"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text left-margin">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
                       {item?.title}
                     </h3>
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -2679,28 +3341,51 @@ export default function Menu() {
                     key={index}
                     className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    <h3 className="text-sm capitalize text-white default-text  left-margin">
-                      {item?.title}
-                    </h3>
-                    {item?.veg ? (
+                    {item?.both ? (
                       <>
-                        <div className="h-4 w-4 items-center justify-center flex ml-16 circle-border-green">
-                          <div className="bg-green-400 h-2 w-2 circle-dot"></div>
-                        </div>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
                       </>
-                    ) : null}
+                    ) : (
+                      <>
+                        {item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xs medium-text left-margin  capitalize">
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text3}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5">
                     {item?.text4}
                   </h3>
                 </div>
@@ -2708,74 +3393,7 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <h3 className="default-text golden uppercase text-lg ap-text mt-20">
-          Main course
-        </h3>
-        <div className="w-2/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
-            {mc1?.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="flex flex-col justify-start items-start w-full text-left"
-                >
-                  <div
-                    key={index}
-                    className="flex flex-row justify-start  items-center mt-6 text-left"
-                  >
-                    <h3 className="text-sm capitalize text-white default-text left-margin">
-                      {item?.title}
-                    </h3>
-                  </div>
 
-                  <h3 className="text-xs medium-text left-margin w-64">
-                    {item?.text1}
-                  </h3>
-                  <h3 className="text-xs medium-text left-margin">
-                    {item?.text2}
-                  </h3>
-                  <h3 className="text-xs medium-text left-margin">
-                    {item?.text3}
-                  </h3>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="w-1/3 flex flex-col justify-start items-start mt-7">
-          <div className="small-map mt-10">
-            {mc2?.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="flex flex-col justify-start items-start w-full text-left"
-                >
-                  <div
-                    key={index}
-                    className="flex flex-row justify-start items-center mt-6  text-left"
-                  >
-                    <h3 className="text-sm capitalize text-white default-text  left-margin">
-                      {item?.title}
-                    </h3>
-                  </div>
-
-                  <h3 className="text-xs medium-text left-margin  capitalize">
-                    {item?.text1}
-                  </h3>
-                  <h3 className="text-xs medium-text left-margin">
-                    {item?.text2}
-                  </h3>
-                  <h3 className="text-xs medium-text left-margin">
-                    {item?.text3}
-                  </h3>
-                  <h3 className="text-xs medium-text left-margin">
-                    {item?.text4}
-                  </h3>
-                </div>
-              );
-            })}
-          </div>
-        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-28">
           <h3 className="text-lg uppercase default-text golden -ml-3">
             Main course
@@ -2787,17 +3405,56 @@ export default function Menu() {
                   key={index}
                   className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm text-white default-text mt-6 w-full left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -2811,12 +3468,62 @@ export default function Menu() {
           <div className="small-map mt-10 w-full">
             {mc4?.map((item, index) => {
               return (
-                <h3
+                <div
                   key={index}
-                  className="text-sm text-white default-text my-6 w-4/5 left-margin"
+                  className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  {item?.title}
-                </h3>
+                  <div
+                    key={index}
+                    className="flex flex-row justify-start items-center mt-6  text-left"
+                  >
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
+                    {item?.text1}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
+                    {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
+                  </h3>
+                </div>
               );
             })}
           </div>
@@ -2832,17 +3539,56 @@ export default function Menu() {
                   key={index}
                   className="flex flex-col justify-start items-start w-full text-left"
                 >
-                  <h3
+                  <div
                     key={index}
-                    className="text-sm text-white default-text mt-6 w-full left-margin"
+                    className="flex flex-row justify-start items-center mt-6  text-left"
                   >
-                    {item?.title}
-                  </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                    {item?.both ? (
+                      <>
+                        {item?.mid ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-yellow">
+                            <div className="bg-yellow-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                              <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                            </div>
+                            <div className="h-4 w-4 items-center justify-center flex ml-4 circle-border-green">
+                              <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {!item?.veg ? (
+                          <div className=" h-4 w-4 items-center justify-center flex -ml-4 circle-border-red">
+                            <div className="bg-red-600 h-2 w-2 circle-dot"></div>
+                          </div>
+                        ) : (
+                          <div className="h-4 w-4 items-center justify-center flex -ml-4 circle-border-green">
+                            <div className="bg-green-400 h-2 w-2 circle-dot"></div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    <h3 className="text-sm capitalize ml-5 text-white default-text  left-margin w-72">
+                      {item?.title}
+                    </h3>
+                  </div>
+
+                  <h3 className="text-xs medium-text left-margin  capitalize mt-5 ml-5 w-64">
                     {item?.text1}
                   </h3>
-                  <h3 className="text-xs medium-text left-margin">
+                  <h3 className="text-xs medium-text left-margin ml-5 ">
                     {item?.text2}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text3}
+                  </h3>
+                  <h3 className="text-xs medium-text left-margin ml-5">
+                    {item?.text4}
                   </h3>
                 </div>
               );
@@ -2851,10 +3597,10 @@ export default function Menu() {
         </div>
         <div className="w-full flex flex-col justify-center items-center  mt-24 px-40">
           <div className="w-full bot-box pb-10">
-            <h3 className="text-sm text-white default-text text-center  mt-10 ml-56 pl-2 ">
+            <h3 className="text-sm text-white default-text  mt-10 -ml-1  ">
               Terms and Conditions Apply
             </h3>
-            <h3 className="text-xs text-white default-text text-center mt-10 ml-10">
+            <h3 className="text-xs text-white default-text text-center mt-10 -ml-20">
               -Government taxes as applicable. -We levy on 10% service charge.
               Full table
               <br />
