@@ -1487,9 +1487,12 @@ export default function Menu() {
   const renderCase2 = () => {
     return (
       <div className="flex flex-row flex-wrap justify-between w-full px-28 mt-10">
-        <h3 className="default-text golden uppercase text-lg ap-text mt-10">
-          appetizers
-        </h3>
+        <div className="flex w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            appetizers
+          </h3>
+        </div>
+
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="small-map mt-10">
             {appetizers1?.map((item, index) => {
@@ -2125,9 +2128,11 @@ export default function Menu() {
   const renderCase4 = () => {
     return (
       <div className="flex flex-row flex-wrap justify-between w-full px-28 mt-10">
-        <h3 className="default-text golden uppercase text-lg rice-text mt-10">
-          rice & noodles
-        </h3>
+        <div className="flex w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            rice & noodles
+          </h3>
+        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="small-map mt-10">
             {riceLeft?.map((item, index) => {
@@ -2263,9 +2268,11 @@ export default function Menu() {
   const renderCase5 = () => {
     return (
       <div className="flex flex-row flex-wrap justify-between w-full px-28 mt-10">
-        <h3 className="default-text golden uppercase text-lg ap-text mt-10">
-          deserts
-        </h3>
+        <div className="flex w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            desserts
+          </h3>
+        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="small-map mt-10 w-full">
             {deserts1?.map((item, index) => {
@@ -2401,9 +2408,11 @@ export default function Menu() {
   const renderCase6 = () => {
     return (
       <div className="flex flex-wrap flex-row justify-between w-full px-28 mt-10">
-        <h3 className="default-text golden uppercase text-lg first-course mt-10">
-          first course
-        </h3>
+        <div className="flex w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            first course
+          </h3>
+        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className=" w-full small-map mt-10">
             {firstCourse1?.map((item, index) => {
@@ -2532,12 +2541,15 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <h3 className="default-text golden uppercase text-lg w-full second-course mt-10">
-          second course
-        </h3>
-        <h3 className="default-text golden uppercase text-lg  ml-40 mt-10">
-          (CHOOSE ANY 2 VEG & ANY 2 NON VEG FOR THE TABLE)
-        </h3>
+        <div className="flex flex-col w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            second course
+          </h3>
+          <h3 className="default-text golden uppercase text-lg -ml-36  mt-10">
+            (CHOOSE ANY 2 VEG & ANY 2 NON VEG FOR THE TABLE)
+          </h3>
+        </div>
+
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="w-full small-map mt-10">
             {secondCourse1?.map((item, index) => {
@@ -2666,12 +2678,14 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <h3 className="default-text golden uppercase text-lg first-course mt-10">
-          main course
-        </h3>
-        <h3 className="default-text golden uppercase text-lg  ml-40 mt-10">
-          (CHOOSE ANY 2 VEG & ANY 2 NON VEG FOR THE TABLE)
-        </h3>
+        <div className="flex flex-col w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            main course
+          </h3>
+          <h3 className="default-text golden uppercase text-lg -ml-36  mt-10">
+            (CHOOSE ANY 2 VEG & ANY 2 NON VEG FOR THE TABLE)
+          </h3>
+        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="w-full small-map mt-10">
             {mainCourse3?.map((item, index) => {
@@ -2800,9 +2814,11 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <h3 className="default-text golden uppercase text-base choose-two mt-28">
-          CHOOSE ANY 2 FOR THE TABLE
-        </h3>
+        <div className="flex flex-col w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-20">
+            choose any 2 for the table
+          </h3>
+        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="w-full small-map mt-10">
             {choose1?.map((item, index) => {
@@ -3029,20 +3045,6 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <div className="w-full flex flex-col justify-center items-center  mt-24 px-40">
-          <div className="w-full bot-box pb-10  flex flex-col items-center">
-            <h3 className="text-sm text-white default-text text-center  mt-10 ml-56 lg:-ml-10 pl-2 ">
-              Terms and Conditions Apply
-            </h3>
-            <h3 className="text-xs text-white default-text text-center mt-10 ml-10 lg:-ml-32">
-              -Government taxes as applicable. -We levy on 10% service charge.
-              Full table
-              <br />
-              must participate -Valid Mondays and Tuesdays only Minimum 5 people
-              <br /> | Maximum of 18 people - no takeaway
-            </h3>
-          </div>
-        </div>
       </div>
     );
   };
@@ -3050,9 +3052,11 @@ export default function Menu() {
   const renderCase7 = () => {
     return (
       <div className="flex flex-wrap flex-row justify-between w-full px-28 mt-10">
-        <h3 className="default-text golden uppercase text-lg ap-text pl-10 mt-10">
-          Soup
-        </h3>
+        <div className="flex w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            soup
+          </h3>
+        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="small-map mt-10">
             {soup1?.map((item, index) => {
@@ -3125,12 +3129,14 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <h3 className="default-text golden uppercase text-lg ap-text pl-6 mt-20">
-          Dimsums
-        </h3>
-        <h3 className="default-text golden uppercase text-base ap-text pl-5 ">
-          (non-vegetarian)
-        </h3>
+        <div className="flex flex-col w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            dimsums
+          </h3>
+          <h3 className="default-text golden uppercase text-lg -ml-16 mt-2">
+            (non-vegetarian)
+          </h3>
+        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="small-map mt-10">
             {dimsums1?.map((item, index) => {
@@ -3259,12 +3265,14 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <h3 className="default-text golden uppercase text-lg ap-text pl-6 mt-20">
-          Dimsums
-        </h3>
-        <h3 className="default-text golden uppercase text-base ap-text pl-11 ">
-          (vegetarian)
-        </h3>
+        <div className="flex flex-col w-full  items-center justify-center">
+          <h3 className="default-text golden uppercase text-lg mt-10 -ml-10">
+            dimsums
+          </h3>
+          <h3 className="default-text golden uppercase text-lg -ml-12 mt-2">
+            (vegetarian)
+          </h3>
+        </div>
         <div className="w-2/3 flex flex-col justify-start items-start mt-7">
           <div className="small-map mt-10">
             {dimsums3?.map((item, index) => {
@@ -3595,20 +3603,6 @@ export default function Menu() {
             })}
           </div>
         </div>
-        <div className="w-full flex flex-col justify-center items-center  mt-24 px-40">
-          <div className="w-full bot-box pb-10">
-            <h3 className="text-sm text-white default-text  mt-10 -ml-1  ">
-              Terms and Conditions Apply
-            </h3>
-            <h3 className="text-xs text-white default-text text-center mt-10 -ml-20">
-              -Government taxes as applicable. -We levy on 10% service charge.
-              Full table
-              <br />
-              must participate -Valid Mondays and Tuesdays only Minimum 5 people
-              <br /> | Maximum of 18 people - no takeaway
-            </h3>
-          </div>
-        </div>
       </div>
     );
   };
@@ -3777,10 +3771,12 @@ export default function Menu() {
                 </div>
               </div>
               {renderBasedOnActiveOption()}
-              <h3 className="text-xs text-white default-text w-full bottom-text mt-20 text-center -ml-60">
-                <span className="star">*</span>Govt. Taxes Applicable. We Levy
-                An Optional 10% Service Charge<span className="star">*</span>
-              </h3>
+              <div className="flex flex-row w-full items-center justify-center">
+                <h3 className="text-xs text-white default-text bottom-text mt-20 text-center -ml-12 ">
+                  <span className="star">*</span>Govt. Taxes Applicable. We Levy
+                  An Optional 10% Service Charge<span className="star">*</span>
+                </h3>
+              </div>
             </div>
           </div>
           <div className="w-11/12 my-40  flex flex-row items-end justify-between urn-section">

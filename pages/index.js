@@ -409,8 +409,8 @@ export default function Home() {
               ))}
             </div> */}
           </div>
-          <div className="flex flex-col justify-start items-start w-1/2 awards-right">
-            <div className="w-full z-10 slider">
+          <div className="flex flex-col justify-center items-start w-1/2  awards-right">
+            <div className="w-full z-10 slider -mt-10">
               <AnimatePresence initial={false} mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -422,13 +422,14 @@ export default function Home() {
                   <div
                     style={{
                       width: "100%",
+                      height: "100%",
                     }}
-                    className=" h-96 p-20"
+                    className=" px-10"
                   >
-                    <h3 className="title-text text-6xl h-10">
+                    <h3 className="title-text text-6xl h-10 mt-10 ml-20 ">
                       {texts[currentSlide].title}
                     </h3>
-                    <div className=" flex flex-col items-start justify-start mt-72 -ml-14">
+                    <div className=" flex flex-col items-start justify-start mt-72 ml-5">
                       <h3 className="sub-text text-2xl">
                         {texts[currentSlide].text1}
                       </h3>
