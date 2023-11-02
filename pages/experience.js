@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import expbg from "../assets/expbg.png";
 import expMenu1 from "../assets/expMenu1.png";
@@ -15,10 +15,64 @@ import jhaalar from "../assets/jhaalar.png";
 import rightLong from "../assets/right-long.png";
 import exp10 from "../assets/exp10.png";
 import quotes from "../assets/quotes.png";
+import { motion } from "framer-motion";
+import hd1 from "../assets/hd1.png";
+import hd2 from "../assets/hd2.png";
+import sld1 from "../assets/sld1.png";
+import sld2 from "../assets/sld2.png";
+import sld3 from "../assets/sld3.png";
+import la from "../assets/la.png";
+import ra from "../assets/ra.png";
 import jhaalarM from "../assets/jhaalarM.png";
 import MobileContext from "@/utils/MobileContext";
+import { AnimatePresence } from "framer-motion";
 export default function Experience() {
+  const [active, setActive] = React.useState(0);
+
+  const data = [
+    {
+      title: "Home Delivery",
+      text1: "Craving Authentic Cantonese Cuisine ?",
+      text2: `We are here to deliver an extraordinary dining experience
+    to your doorstep. Explore our menu, place your order, and let us
+    bring the tantalising flavours of Canton to the comfort of your
+    home. Choose from a wide range of dishes and cocktails to
+    satiate your cravings.`,
+      btn: "Order Now",
+    },
+    {
+      title: "Catering",
+      text1:
+        "Having a party? Sit back, relax, and leave all the planning to Royal China.",
+      text2: `We’re here to customise the menu as per requirements, take care of everything from crockery to cutlery to chefing dishes that are prepared freshly on site, and provide the best service to your guests.`,
+      btn: "Book Our Services",
+    },
+  ];
+
+  const data1 = [
+    {
+      text: "The symbolic illustrations and printed wallpapers with columns refer to Chinese eclecticism that transports you to a space that brings positive energy of Chinese culture.",
+      img: sld1,
+    },
+    {
+      text: `The bar ceiling is adorned with an installation with traced Chinese letters that are a poetic depiction of Chinese values and also add grandeur to the space. Lit up at night, they add warmth and rebalance the dark hues of the space.`,
+      img: sld2,
+    },
+    {
+      text: "Our space is filled with the aroma of classic & contemporary Cantonese dishes bursting with flavours, creating the perfect eating experience.",
+      img: sld3,
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % data.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [data.length]);
+
   const { isMobile } = React.useContext(MobileContext);
+  const [bottom, setBottom] = React.useState(0);
   return (
     <Layout>
       <div className="exp-layout">
@@ -126,6 +180,7 @@ export default function Experience() {
               check our menu
             </h3>
           </div>
+
           <Image
             src={quotes}
             alt="exp-menu"
@@ -295,7 +350,52 @@ export default function Experience() {
               </div>
             </div>
           </div>
+          <AnimatePresence initial={false} mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex w-full flex-row  mt-40">
+                <div className="w-1/2 flex flex-col p-10">
+                  <h3 className="text-6xl golden book-text-1">
+                    {data[active].title}
+                  </h3>
+                  <h4 className="text-base golden default-text-1 mt-20 ml-8">
+                    {data[active].text1}
+                    <br />
+                    <br />
+                    <br />
+                    <>{data[active].text2}</>
+                    {"}"}
+                  </h4>
+                  <div className=" pr-8 py-1 mt-20 reserve-btn  w-64 lg:py-2 ml-2">
+                    <Link href="/menu">
+                      <h3 className=" text-sm uppercase book-text golden">
+                        {data[active].btn}
+                      </h3>
+                    </Link>
+                  </div>
+                </div>
+                <div className="w-1/2 px-5 mt-4">
+                  <Image src={!active ? hd1 : hd2} alt="image" />
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
+          <div className="flex flex-row w-full h-10 mt-24 items-center justify-center">
+            <div
+              className="w-40 h-1 "
+              style={{ backgroundColor: !active ? "#E5BC79" : "white" }}
+            ></div>
+            <div
+              className="w-40 h-1 ml-4"
+              style={{ backgroundColor: active ? "#E5BC79" : "white" }}
+            ></div>
+          </div>
           <Image src={exp6} alt="exp-6" className=" mt-40 exp6-img" />
           <div className="w-full flex flex-col my-24">
             <h3 className=" text-5xl book-text golden uppercase">our space</h3>
@@ -319,7 +419,59 @@ export default function Experience() {
               </div>
             </div>
           </div>
-          <Image src={exp9} alt="exp9" priority={true} className="mt-24" />
+          <div className="w-full flex flex-row mt-40">
+            <div className="w-3/5 flex flex-col justify-between">
+              <h3 className="text-xl default-text-1 golden uppercase w-4/5 mt-10">
+                {data1[bottom].text}
+              </h3>
+              <div className="flex flex-row items-center -ml-5">
+                <Image
+                  src={la}
+                  alt="arrow"
+                  className="w-4 h-3"
+                  onClick={() => {
+                    if (bottom > 0) {
+                      setBottom((prev) => (prev - 1) % data1.length);
+                    }
+                  }}
+                />
+                <h3 className="text-base default-text-1 golden ml-2">
+                  {`${bottom + 1}/${data1.length}`}
+                </h3>
+                <Image
+                  src={ra}
+                  alt="arrow"
+                  className="w-4 h-3 ml-2"
+                  onClick={() => setBottom((prev) => (prev + 1) % data1.length)}
+                />
+                <div
+                  className="w-32 h-0.5  ml-4"
+                  style={{
+                    backgroundColor: bottom === 0 ? "#E5BC79" : "white",
+                    borderRadius: 5,
+                  }}
+                />
+                <div
+                  className="w-32 h-0.5  ml-4"
+                  style={{
+                    backgroundColor: bottom === 1 ? "#E5BC79" : "white",
+                    borderRadius: 5,
+                  }}
+                />
+                <div
+                  className="w-32 h-0.5  ml-4"
+                  style={{
+                    backgroundColor: bottom === 2 ? "#E5BC79" : "white",
+                    borderRadius: 5,
+                  }}
+                />
+              </div>
+            </div>
+            <div className="w-2/5">
+              <Image src={data1[bottom].img} alt="image" />
+            </div>
+          </div>
+          <Image src={exp9} alt="exp9" priority={true} className="mt-40" />
           <div className="w-full h-96 mt-10 items-center justify-between flex flex-row">
             <h3 className="text-base default-text-2 golden w-2/5">
               The central area, the private dining area, and the high bar
