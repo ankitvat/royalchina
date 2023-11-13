@@ -26,7 +26,7 @@ const App = ({ Component, pageProps }) => {
     } else {
       setDesktop(false);
     }
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 580) {
       setMobile(true);
     } else {
       setMobile(false);
@@ -49,7 +49,6 @@ const App = ({ Component, pageProps }) => {
       }
     };
     window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
   }, []);
 
   React.useEffect(() => {

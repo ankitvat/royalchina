@@ -19,6 +19,7 @@ import c8 from "../assets/c8.png";
 const images = [c1, c2, c3, c4, c5, c6, c7, c8];
 
 import MobileContext from "@/utils/MobileContext";
+import { sendContactForm } from "@/lib/api";
 export default function Catering() {
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
@@ -39,6 +40,15 @@ export default function Catering() {
       clearInterval(interval);
     };
   }, []);
+
+  const sendFunction = async () => {
+    let body = {
+      name: name,
+      phoneNo: phone,
+      email: email,
+    };
+    await sendContactForm(body);
+  };
 
   return (
     <Layout>
@@ -149,24 +159,28 @@ export default function Catering() {
           </div>
         </div>
       ) : (
-        <div className="w-full rest-section-1 overflow-hidden -mt-60 ">
+        <div className="w-full rest-section-1 overflow-hidden -mt-64 ">
           <div className="w-9/12  inbox-section flex flex-col items-start justify-start px-16 pt-10 pb-20">
-            <h3 className="text-3xl uppercase inner-text">drop your number</h3>
-
-            <h3 className="text-sm text-gray-300 placeholder-text mt-10 ">
-              Name
+            <h3 className="text-3xl uppercase inner-text mt-12">
+              drop your number
             </h3>
-            <div className="flex flex-col w-full mt-2 h-10 items-start justify-start px-2 py-2 inner-inbox bgc-gray">
-              <input
-                type="text"
-                aria-label="name"
-                value={name}
-                className="w-full input-box"
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-              />
+            <div className="flex flex-col mt-12 w-full">
+              <h3 className="text-sm text-gray-300 placeholder-text mt-10 ">
+                Name
+              </h3>
+              <div className="flex flex-col w-full mt-2 h-10 items-start justify-start px-2 py-2 inner-inbox bgc-gray">
+                <input
+                  type="text"
+                  aria-label="name"
+                  value={name}
+                  className="w-full input-box "
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                />
+              </div>
             </div>
+
             <div className="flex flex-row w-full justify-between items-center mt-2">
               <div className="flex flex-col items-start justify-center w-5/12">
                 <h3 className="text-sm text-gray-300 placeholder-text mt-10 ">
@@ -201,7 +215,10 @@ export default function Catering() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row items-center justify-center mt-10 pl-4 pr-8 py-2 inner-inbox">
+            <div
+              className="flex flex-row items-center justify-center mt-10 pl-4 pr-8 py-2 inner-inbox"
+              onClick={sendFunction}
+            >
               <h3 className="text-base uppercase inner-box-text golden">
                 send my message
               </h3>

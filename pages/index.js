@@ -17,7 +17,7 @@ import jhaalarM from "../assets/jhaalarM.png";
 import jhaalar from "../assets/jhaalar.png";
 import awards from "../assets/awards.png";
 import lota from "../assets/lota.png";
-import food from "../assets/food.png";
+import food from "../assets/food.webp";
 import awd1 from "../assets/awd1.png";
 import awd2 from "../assets/awd2.png";
 import awd3 from "../assets/awd3.png";
@@ -338,32 +338,23 @@ export default function Home() {
       </section>
 
       {isMobile ? (
-        <div
-          className=" bg-red-200 w-full h-36 mt-20"
-          style={{ position: "relative" }}
-        >
-          {mimages.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                width: "100%",
-                height: "100%",
-                display: index === currentSlide ? "block" : "none",
-                transition: "opacity 1s ease-in-out",
-                position: "absolute",
-                opacity: index === currentSlide ? 1 : 0,
-                top: 0,
-                left: 0,
-              }}
+        <div className="  w-full h-36 mt-20" style={{ position: "relative" }}>
+          <AnimatePresence initial={false} mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
             >
               <Image
-                src={item}
-                priority={true}
-                alt="awd1"
+                src={mimages[currentSlide]}
+                alt={`MImage ${currentSlide + 1}`}
                 className="awd-images"
+                style={{ width: "100%", height: "100%" }}
               />
-            </div>
-          ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       ) : (
         <div className="w-full bg-red-50  mt-24 lg:mt-52 awards-section flex flex-row">
@@ -492,8 +483,10 @@ export default function Home() {
             <Image src={food} alt="food" className="foodImg" />
             <h1 className=" text-2xl hero-text foodText">
               Good food, great <br />
-              company, and endless laughter - the perfect recipe for a memorable
-              dining experience at Royal China!
+              company, and endless <br />
+              laughter - the perfect recipe
+              <br /> for a memorable dining
+              <br /> experience at Royal China!
             </h1>
           </div>
         )}

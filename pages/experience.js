@@ -161,7 +161,8 @@ export default function Experience() {
           <div className="w-full flex flex-row items-center justify-center">
             <h3 className="text-xl golden book-text text-center mt-24 -ml-10 flex-wrap">
               Dive into a journey
-              <br /> of culinary adventure in every bite.
+              <br /> of culinary adventure
+              <br /> in every bite.
             </h3>
           </div>
           <Image src={exp5} alt="exp-menu" priority={true} className=" mt-24" />

@@ -339,7 +339,7 @@ input[type=date]:focus::-webkit-datetime-edit {
     margin-top: 10%;
   }
   .foodImg {
-    width: 50%;
+    width: 40%;
   }
   .foodText {
     width:50%;
